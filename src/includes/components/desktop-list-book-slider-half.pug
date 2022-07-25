@@ -1,0 +1,19 @@
+mixin list-video(title, dataListVideo)
+	.list-video.style-section
+		.list-video__title.pb-1.d-flex.align-items-center
+			h3.d-inline-block.mb-0=title
+			a(href="#") (Xem tất cả)
+
+		if dataListVideo
+			.list-video__box.owl-carousel.pt-4#list-video__box.up-nav
+				each item in dataListVideo 
+					.item 
+						include video-detail.pug 
+						+VideoDetail(item)
+		else
+			.list-video__box.owl-carousel.pt-4#list-video__box.up-nav
+				.item 
+				.item 
+				.item 
+				.item 
+

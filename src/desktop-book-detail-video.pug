@@ -1,0 +1,24 @@
+extends includes/layout/layout.pug
+block pages 
+  include includes/common/data-list-video.pug
+  include includes/components/desktop-list-book-slider-half.pug
+  - let isRating = false
+
+  section.section-book-detail-video-page 
+    .container 
+      .section-wrapper 
+        .row 
+          .col-lg-3.pr-0
+            include includes/components/desktop-category.pug
+          .col-lg-9
+            include includes/components/section-breadcrumb.pug
+            +breadcrumb()
+
+            include includes/components/desktop-section-book-detail-video.pug
+
+            include includes/components/desktop-section-book-detail-author.pug
+            +section-book-detail-author({authorName : 'Rosie Nguyễn', chaptersCount : "23", timeLength: "3:23:02", listenersCount: "2232", bookRating: 4.5, bookType: "Kỹ năng - Nghệ thuật sống", bookPublisher :  "NXB Tổng hợp thành phố HCM", timeUpdate: "04/11/2020"})
+
+            - isRating = true
+            +list-video('Video cùng thể loại', dataListVideo)
+          

@@ -1,0 +1,30 @@
+//- Interface VideoDetail {
+//-   image: string 
+//-   link: string 
+//-   title: string 
+//-   des: string 
+//-   view: string 
+//-   time: string
+//-   isMobile: boolean
+//- }
+
+mixin VideoDetail(data)
+  .video-detail(class=`${data.isMobile ? 'horizontal' : ''}`)
+    .video-image 
+      img(src=`${data.image}`, alt="")
+      img(src="./assets/icons/icon-play-fill-orange.svg", alt="").icon-hover
+    .video-content
+      a(href=`${data.link}`).video-title= data.title 
+      p.video-des= data.des 
+
+      if isRating 
+        .video-rating.d-flex.align-items-center 
+          img(src="./assets/icons/icon-star-fill-yellow.svg", alt="")
+          img(src="./assets/icons/icon-star-fill-yellow.svg", alt="")
+          img(src="./assets/icons/icon-star-fill-yellow.svg", alt="")
+          img(src="./assets/icons/icon-star-fill-yellow.svg", alt="")
+          img(src="./assets/icons/icon-star-fill-yellow.svg", alt="")
+
+      p.video-info 
+        span.info-view= data.view 
+        span.info-time= data.time

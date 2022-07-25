@@ -1,0 +1,13 @@
+extends includes/layout/layout-authen-mobile.pug
+block pages 
+  include includes/components/mobile-category.pug
+  include includes/components/mobile-account-sidebar.pug
+  include includes/common/data-list-book.pug
+
+  section.section-favorite-book-mobile
+    .section-wrapper 
+      include includes/components/mobile-section-result-search.pug
+      +MobileSectionResultSearch('lists', 'Sách bạn đã xem')
+
+  
+  

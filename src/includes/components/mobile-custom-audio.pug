@@ -1,0 +1,55 @@
+.desktop-custom-audio.mobile-custom-audio#js-custom-audio-player
+  audio.audio-current
+    source(src="https://archive.org/download/flu_2005_librivox/flu_00_mouritz_128kb.mp3")
+
+  .audio-ui-wrapper 
+    .audio-loading.d-flex.align-items-center.justify-content-center
+      img(src="./assets/icons/icon-loading-gray.svg", alt="")
+    .audio-title Phần 1: Tôi Đã Học Như Thế Nào?
+    .audio-des Giọng đọc: #[span Nguyễn Văn A]
+
+    .audio-process-wrapper
+      .audio-current-time 00:00:00
+      .audio-process-ui 
+        input(type="range" value="0" min="0" max="100").range-slider-input.audio-process
+      .audio-total-time 00:00:00
+
+    .audio-control
+      .control-item.d-flex.align-items-center.justify-content-center.mb-2
+        .audio-btn.audio-time-skip
+          <svg data-toggle="tooltip" data-placement="bottom" title="Playback Rate" class="button-icon" id="audioTimeSKip" data-toggle="dropdown" aria-expanded="false" type="button" width="19" height="14" viewBox="0 0 19 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.90356 0C4.90356 0 0.903564 4.03125 0.903564 9C0.903564 10.6562 1.34106 12.2188 2.12231 13.5312C2.27856 13.8438 2.62231 14 2.96606 14H16.8098C17.1536 14 17.4973 13.8438 17.6536 13.5312C18.4348 12.2188 18.9036 10.6562 18.9036 9C18.9036 4.03125 14.8723 0 9.90356 0ZM16.5286 12.5H3.24731C2.68481 11.4375 2.40356 10.25 2.40356 9C2.40356 4.875 5.74731 1.5 9.90356 1.5C14.0286 1.5 17.4036 4.875 17.4036 9C17.4036 10.25 17.0911 11.4375 16.5286 12.5ZM12.1223 3.3125C11.7161 3.15625 11.3098 3.375 11.1848 3.78125L9.74731 8.03125C8.71606 8.09375 7.90356 8.96875 7.90356 10C7.90356 10.375 7.99731 10.7188 8.15356 11H11.6223C11.7786 10.7188 11.9036 10.375 11.9036 10C11.9036 9.40625 11.6223 8.875 11.1848 8.5L12.5911 4.25C12.7161 3.875 12.5286 3.4375 12.1223 3.3125Z" fill="#5E6164"/></svg>
+          ul.dropdown-menu(aria-labelledby="audioTimeSKip").custom-style-dropdown-2.dropdown-menu-right
+            li #[.dropdown-item(data-playback-rate="0.5") 0.5x]
+            li #[.dropdown-item.active(data-playback-rate="1") 1x]
+            li #[.dropdown-item(data-playback-rate="2") 2x]
+
+        .audio-btn.audio-prev 
+          <svg data-toggle="tooltip" data-placement="bottom" title="Previous" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.70312 6L12.1875 0V12L3.70312 6ZM0.1875 0H2.20312V12H0.1875V0Z" fill="#5E6164"/></svg>
+
+        .audio-btn.audio-play 
+          <svg data-toggle="tooltip" data-placement="bottom" title="Play" class="play" width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.139893 0.015625L11.1086 7L0.139893 13.9844V0.015625Z" fill="#5E6164"/></svg>
+          <svg data-toggle="tooltip" data-placement="bottom" title="Pause" class="pause" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"width="519.479px" height="519.479px" viewBox="0 0 519.479 519.479" style="enable-background:new 0 0 519.479 519.479;"xml:space="preserve"><path d="M193.441,0h-75.484c-16.897,0-30.6,13.703-30.6,30.6v458.277c0,16.898,13.703,30.602,30.6,30.602h75.484c16.897,0,30.6-13.703,30.6-30.602V30.6C224.042,13.703,210.339,0,193.441,0z"/><path d="M401.521,0h-75.484c-16.896,0-30.6,13.703-30.6,30.6v458.277c0,16.898,13.703,30.602,30.6,30.602h75.484c16.896,0,30.6-13.703,30.6-30.602V30.6C432.121,13.703,418.418,0,401.521,0z" fill="#5E6164"/></svg>
+
+        .audio-btn.audio-next 
+          <svg data-toggle="tooltip" data-placement="bottom" title="Next" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.0457 0H12.0613V12H10.0457V0ZM0.0612793 12V0L8.54565 6L0.0612793 12Z" fill="#5E6164"/></svg>
+
+        .audio-btn.audio-volume-wrapper
+          <svg data-toggle="tooltip" data-placement="bottom" title="Volume" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.72461 0.695312C11.4173 1.0599 12.8105 1.93229 13.9043 3.3125C14.998 4.66667 15.5449 6.22917 15.5449 8C15.5449 9.77083 14.998 11.3464 13.9043 12.7266C12.8105 14.0807 11.4173 14.9401 9.72461 15.3047V13.5859C10.9486 13.2214 11.9382 12.5312 12.6934 11.5156C13.4746 10.5 13.8652 9.32812 13.8652 8C13.8652 6.67188 13.4746 5.5 12.6934 4.48438C11.9382 3.46875 10.9486 2.77865 9.72461 2.41406V0.695312ZM9.72461 4.64062C11.1048 5.31771 11.7949 6.4375 11.7949 8C11.7949 9.5625 11.1048 10.6823 9.72461 11.3594V4.64062ZM0.544922 5.5H3.86523L8.04492 1.32031V14.6797L3.86523 10.5H0.544922V5.5Z" fill="#5E6164"/></svg>
+          .audio-volume-input
+            input(type="range" value="0" min="0" max="100").range-slider-input.audio-volume
+
+      .control-item.d-flex.align-items-center.justify-content-center
+        .audio-btn.audio-shuffle 
+          <svg data-toggle="tooltip" data-placement="bottom" title="Shuffle" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.63013 7.61328L11.1165 10.0996L12.7493 8.4668V12.8457H8.37036L10.0032 11.2129L7.51685 8.72656L8.63013 7.61328ZM8.37036 0.154297H12.7493V4.5332L11.1165 2.90039L1.17114 12.8457L0.0578613 11.7324L10.0032 1.78711L8.37036 0.154297ZM5.29028 4.27344L4.177 5.38672L0.0578613 1.26758L1.17114 0.154297L5.29028 4.27344Z" fill="#5E6164"/></svg>
+        .audio-btn.audio-bar.active
+          <svg data-toggle="tooltip" data-placement="bottom" title="List" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.0578613 0.970703H12.7493V2.5293H0.0578613V0.970703ZM0.0578613 5.7207V4.125H12.7493V5.7207H0.0578613ZM0.0578613 12.0293V10.4707H12.7493V12.0293H0.0578613ZM0.0578613 8.875V7.2793H12.7493V8.875H0.0578613Z" fill="#5E6164"/></svg>
+        .audio-btn.audio-repeat 
+          <svg data-toggle="tooltip" data-placement="bottom" title="Loop" width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.3743 12.4707V9.2793H12.9329V14.0293H3.43286V16.4043L0.278564 13.25L3.43286 10.0957V12.4707H11.3743ZM3.43286 4.5293V7.7207H1.87427V2.9707H11.3743V0.595703L14.5286 3.75L11.3743 6.9043V4.5293H3.43286Z" fill="#5E6164"/></svg>
+
+
+
+
+
+
+
+

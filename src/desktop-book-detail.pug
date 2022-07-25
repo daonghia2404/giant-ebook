@@ -1,0 +1,21 @@
+extends includes/layout/layout.pug
+block pages 
+  include includes/common/data-list-book.pug
+
+  section.section-book-detail-page 
+    .container 
+      .section-wrapper 
+        .row 
+          .col-lg-3.pr-0
+            include includes/components/desktop-category.pug
+          .col-lg-9
+            include includes/components/section-breadcrumb.pug
+            +breadcrumb()
+
+            include includes/components/section-book-detail.pug
+
+            include includes/components/section-book-detail-infomation.pug
+
+            include includes/components/desktop-list-book-slider-full.pug
+            +list-video('Sách cùng tác giả', dataListBookVertical)
+            +list-video('Có thể bạn thích sách này', dataListBookVertical)

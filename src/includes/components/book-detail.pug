@@ -1,0 +1,53 @@
+//- Interface ButtonDetail {
+//-   typeBook: enumString['book-detail-horizontal'|'book-detail-vertical'|'book-detail-mb']
+//-   isVertical?: boolean 
+//-   isMobile?: boolean 
+//-   image: string 
+//-   title: string 
+//-   author?: string 
+//-   type?: string 
+//-   view?: string 
+//-   typeBookHover?: enumString['book', 'audio', 'video']
+//- }
+
+mixin BookDetail(data, typeBookHover)
+  div(class=`${data.typeBook}`)
+    div(class=`${data.isVertical ? "book-detail" : "book-detail d-flex"}`)
+      .book-detail-img
+        a(href="#") 
+          img(src=`${data.image}`, alt="")
+          if typeBookHover === 'book'
+            .book-hover-overlay
+              img(src="./assets/icons/icon-hover-book.svg", alt="").book-hover-icon
+          if typeBookHover === 'audio'
+            .book-hover-overlay
+              img(src="./assets/icons/icon-hover-book-audio.svg", alt="").book-hover-icon
+          if typeBookHover === 'video'
+            .book-hover-overlay
+              img(src="./assets/icons/icon-hover-book-video.svg", alt="").book-hover-icon
+
+      .book-detail-info
+        h6.info-title.mb-0
+          a(href="#")= data.title
+        .info-desc
+          .info-desc-inner
+            .info-desc-author
+              span= data.author
+            .info-desc-type
+              span= data.type
+          .info-desc-view
+            span= data.view
+          .info-desc-rate
+            if !data.isMobile
+              each item in [1,2,3,4,5]
+                span.rate-star
+                  img(src="./assets/icons/icon-star-fill-yellow.svg" alt="")
+            else
+              .rate-view
+                span.rate-view-icon
+                  img(src="./assets/icons/icon-eye.svg " alt="")
+                span.rate-view-count 324,323
+              .rate-star.d-flex.align-items-center
+                span.rate-star-icon
+                  img(src="./assets/icons/icon-star-fill-yellow.svg" alt="")
+                span.rate-number 5

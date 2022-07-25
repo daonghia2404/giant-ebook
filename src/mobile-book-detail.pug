@@ -1,0 +1,17 @@
+extends includes/layout/layout-mobile.pug
+block pages 
+  include includes/components/mobile-category.pug
+  include includes/common/data-list-book.pug
+
+  section.section-book-detail-page 
+    .section-wrapper 
+      include includes/components/section-breadcrumb.pug
+      +breadcrumb()
+      
+      include includes/components/section-book-detail.pug
+
+      include includes/components/section-book-detail-infomation.pug
+
+      include includes/components/mobile-list-book-slide-half.pug
+      +list-video('Sách cùng tác giả', dataListBookVertical)
+      +list-video('Sách cùng chuyên mục', dataListBookVertical)

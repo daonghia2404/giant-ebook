@@ -1,0 +1,102 @@
+.footer {
+  .footer__info {
+    .footer__logo {
+      margin-left: -25px;
+    }
+  }
+
+  .footer-middle {
+    padding-left: 150px;
+
+    @media screen and (max-width: 1199px) {
+      padding-left: 100px;
+    }
+
+    @media screen and (max-width: 991px) {
+      padding-left: 50px;
+    }
+  }
+
+  .footer-end {
+    padding-left: 50px;
+
+    @media screen and (max-width: 991px) {
+      padding-left: 0;
+    }
+  }
+
+  .footer__content {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .footer-list {
+      .footer-info-descrip {
+        font-size: 12px;
+        line-height: 19px;
+        color: $gray;
+      }
+
+      .footer-contact-item {
+        padding-bottom: 17px;
+
+        img {
+          padding-right: 9px;
+        }
+      }
+
+      .footer-detail {
+        .detail-title {
+          font-family: 'SFProDisplay-Semibold';
+          font-size: 12px;
+          line-height: 19px;
+          color: $primary-dark;
+
+          img {
+            padding-left: 9px;
+          }
+        }
+      }
+    }
+
+    .content-list__item>a {
+      font-size: 12px;
+      line-height: 24px;
+      color: $gray;
+    }
+
+    .footer-recomend {
+      padding-left: 50px;
+    }
+
+    .footer__content-list {
+      padding: 0;
+
+      .content-list__item {
+        font-size: 12px;
+        line-height: 24px;
+        color: $gray;
+      }
+    }
+
+    .footer-content-title {
+      color: $primary-dark;
+      font-family: 'SFProDisplay-Bold';
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+}
+
+.footer-copyright {
+  .footer-endbox {
+    background: $primary-dark;
+    padding: 18px 0;
+
+    span {
+      text-align: center;
+      display: block;
+      font-size: 14px;
+      color: $white;
+    }
+  }
+}

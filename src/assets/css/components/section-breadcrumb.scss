@@ -1,0 +1,25 @@
+.section-breadcrumb {
+	border-top: 1px solid $border-light !important;
+	@media (max-width: 575px) {
+		margin-bottom: 0;
+	}
+	.breadcrumb-list {
+    margin: 0;
+    padding: 0;
+		.breadcrumb-items {
+			&:not(:last-child) .breadcrumb-link {
+				padding-right: 2px;
+			}
+			&.active {
+				.breadcrumb-link {
+					color: $primary-dark;
+				}
+			}
+			.breadcrumb-link {
+				color: $gray;
+				font-size: 13px;
+				white-space: nowrap;
+			}
+		}
+	}
+}

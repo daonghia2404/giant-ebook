@@ -1,0 +1,57 @@
+
+include ./button.pug
+.category-filter
+  .filter-title.d-flex.align-item-center.mb-4(class=`${isCategoryFilter && !hideCategory ? 'mt-5' : ''}`)
+    img(src="./assets/icons/icon-filter-blue.svg" alt="icon-filter")
+    h2.-title.bold.mb-0.mt-0 BỘ LỌC TÌM KIẾM
+
+  if isCategoryFilter && !hideCategory
+    form(action="#").filter-author
+      h3.-title.author-title Tác giả
+      ul.list-author.p-0
+        li.list-author.primary-light.form-group
+          input(type="checkbox" name="author" id="authors") 
+          label(for="authors")  Nhiều Tác Giả
+            span (12044)
+        li.list-author.primary-light.form-group
+          input(type="checkbox" name="authors" id="windy") 
+          label(for="windy")  The Windy
+            span (474)
+        li.list-author.primary-light.form-group.not-boder
+          input(type="checkbox" name="authors" id="dk") 
+          label(for="dk")  DK 
+            span (410)
+
+    form(action="#").filter-search
+      .d-flex.align-items-center.select-multilple-filter
+        select.mySelect2(multiple="multiple")
+          option(value ="Hà Nội") Hà Nội 
+          option(value ="dhHà Nội") dh Hà Nội 
+          option(value ="Nhà xb Hà Nội") Nhà xb Hà Nội 
+
+        img(src="./assets/icons/icon-search-blue.svg" alt="").search-icon
+
+      //- .current-filter.d-flex.flex-wrap
+      //-   +Button({ title:'Hà Nội ',icon:'./assets/icons/icon-close-blue.svg', className: 'reverse outline-primary light-blue' })
+      //-   +Button({ title:'ĐH Hà Nội',icon:'./assets/icons/icon-close-blue.svg', className: 'reverse outline-primary light-blue' })
+      //- .input-search.d-flex.position-relative.align-items-center
+      //-   input(type="text" value="Hà Nội" class="w-100")
+      //-   img(src="./assets/icons/icon-search-blue.svg" alt="" class="position-absolute")    
+
+  form(action="#").filter-languages
+    h3.-title.author-title Theo ngôn ngữ
+    .list-select.list-languages.d-flex.flex-wrap
+      +Button({ title:'Tiếng Việt', className: 'light-blue active' })
+      +Button({ title:'Tiếng Anh ', className: 'light-blue' })
+      +Button({ title:'Tiếng Pháp', className: 'light-blue' })
+      +Button({ title:'Tiếng Nga', className: 'light-blue' })
+
+  form(action="#").filter-books
+    h3.-title.author-title Theo Loại sách
+    .list-select.list-books.d-flex.flex-wrap
+      +Button({ title:'Sách điện tử', className: ' light-blue' })
+      +Button({ title:'Sách nói', className: 'light-blue' })
+      +Button({ title:'Video', className: 'light-blue' })    
+
+  form(action="#").filter-button.mt-3.desktop
+    +Button({ title:'Xoá tất cả', className: 'orange w-100' })

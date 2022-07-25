@@ -1,0 +1,142 @@
+:root {
+  --plyr-color-main: #F46F14;
+}
+
+.section-book-detail-video {
+  padding: 0;
+  overflow: hidden;
+
+  #book-video-player {
+    height: 495px;
+  }
+
+  &.mobile-section-book-detail-video {
+    #book-video-player {
+      height: 210px;
+    }
+  }
+
+  .book-detail-video-info {
+    padding: 15px;
+
+    .info-header {
+      .video-title {
+        font-size: 18px;
+        color: $primary-dark;
+      }
+
+      .video-des {
+        color: $gray-dark;
+        font-size: 400px;
+        font-size: 14px;
+
+        .video-total {
+          padding-right: 100px;
+        }
+      }
+    }
+
+    .action-item {
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: $gray;
+      text-align: center;
+      transition: 0.3s ease;
+      cursor: pointer;
+      line-height: 1.5;
+
+      .fill {
+        display: none;
+      }
+
+      &.active {
+        .outline {
+          display: none;
+        }
+        .fill {
+          display: block;
+        }
+      }
+
+      &.love:hover,
+      &.love.active {
+        color: $secondary;
+
+        svg path {
+          fill: $secondary;
+        }
+      }
+
+      &.share:hover,
+      &.share.active {
+        color: $primary-dark;
+
+        svg path {
+          fill: $primary-dark;
+        }
+      }
+
+      &.pinterest:hover,
+      &.pinterest.active {
+        color: $red;
+
+        svg path {
+          fill: $red;
+        }
+      }
+
+      svg {
+        height: 20px;
+        display: block;
+        margin: 0 auto 10px;
+
+        path {
+          transition: 0.3s ease;
+        }
+      }
+    }
+
+    .list-video-header-mobile {
+      cursor: pointer;
+      &:hover {
+        h3 {
+          color: $secondary;
+        }
+        svg path {
+          fill: $secondary;
+        }
+      }
+      h3 {
+        font-size: 16px;
+        font-family: 'SFProDisplay-Semibold';
+        color: $text-gray;
+        transition: 0.3s ease;
+      }
+
+      svg {
+        flex: 0 0 16px;
+        max-width: 16px;
+        margin-right: 10px;
+        transform: translateY(1px);
+        path {
+          transition: 0.3s ease;
+        }
+      }
+    }
+
+    .list-video-mobile {
+      display: none;
+      &.active {
+        display: block;
+      }
+      .item {
+        padding: 10px 0;
+
+        &:not(:last-of-type) {
+          border-bottom: 1px solid $border-light;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,188 @@
+.desktop-custom-audio {
+  audio.audio-current {display: none;}
+  .audio-ui-wrapper {
+    background: $table-row-even;
+    padding: 15px 0;
+    position: relative;
+
+    .audio-loading {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      background: rgba(0, 0, 0, 0.05);
+      display: none !important;
+      &.loading {
+        display: flex !important;
+      }
+      img {
+        width: 15px;
+        animation: loading 1s linear infinite;
+        @keyframes loading {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+    }
+
+    .audio-title {
+      font-family: 'SFProDisplay-Bold';
+      color: $primary-dark;
+      font-size: 18px;
+      padding: 0 15px;
+      margin-bottom: 10px;
+    }
+
+    .audio-des {
+      font-size: 14px;
+      font-weight: 400;
+      color: $gray-dark;
+      padding: 0 15px;
+      margin-bottom: 10px;
+
+      span {
+        font-family: 'SFProDisplay-Bold';
+      }
+    }
+
+    .audio-process-wrapper {
+      position: relative;
+      margin: 25px 0 10px;
+
+      .audio-total-time,
+      .audio-current-time {
+        position: absolute;
+        font-size: 12px;
+        font-weight: 400;
+        color: $gray-dark;
+        top: -10px;
+      }
+
+      .audio-total-time {
+        right: 15px;
+      }
+      .audio-current-time {
+        left: 15px;
+      }
+    }
+    .audio-control {
+      padding: 0 10px;
+      .control-item {
+        flex: 1;
+        &:nth-of-type(1) {
+          .audio-btn {
+            margin-right: 10px;
+          }
+        }
+        &:nth-of-type(2) {
+          .audio-btn {
+            margin-left: 10px;
+          }
+        }
+      }
+      .audio-btn {
+        position: relative;
+        flex: 0 0 30px;
+        max-width: 30px;
+        height: 30px;
+        padding: 5px;
+        display: flex;
+        cursor: pointer;
+
+        @media (min-width: 992px) {
+          &:hover {
+            svg path {
+              fill: $secondary;
+            }  
+          }
+        }
+        &.active {
+          svg path {
+            fill: $secondary;
+          }
+        }
+
+        svg {
+          width: 15px;
+          height: 15px;
+          margin: auto;
+          path {
+            transition: .3s ease;
+          }
+        }
+        &.audio-shuffle svg {
+          transform: scale(0.9);
+        }
+        &.audio-time-skip svg {
+          transform: scale(1.2);
+        }
+        &.audio-play {
+          .play {display: block;}
+          .pause {display: none;}
+          &.active {
+            .play {display: none;}
+            .pause {display: block;}
+          }
+        }
+        &.audio-volume-wrapper {
+          .audio-volume-input {
+            position: absolute;
+            top: 50%;
+            left: calc(100% + 10px);
+            transform: translateY(-50%);
+            width: 80px;
+            margin: 0;
+          }
+          .audio-volume {
+            // height: 5px;
+            // opacity: 0;
+            @include customInputRange();
+          }
+        }
+        &.audio-volume-wrapper {
+          position: relative;
+          @media (min-width: 992px) {
+            &:hover {
+              &.mute:before {
+                background: $secondary;
+              }
+            }
+          }
+          &.mute:before {
+            position: absolute;
+            content: '';
+            width: 2px;
+            height: 20px;
+            background: $icon-gray;
+            top: 6px;
+            left: 15px;
+            transform: rotate(45deg);
+            transition: 0.3s ease;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.audio-detail-lists {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
+.rangeslider__fill, .rangeslider__handle {
+  background: $secondary !important;
+}
+
+.rangeslider__handle {
+  border: solid 2px $table-row-even !important;
+}

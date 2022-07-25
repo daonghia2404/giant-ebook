@@ -1,0 +1,71 @@
+//- Interface DesktopSectionResultSearch {
+//-   type: enumString['search', 'lists']
+//-   title: string 
+//-   typeBookHover: enumString['book', 'audio', 'video']
+//-   isHideArrow: boolean
+//- }
+
+include button.pug
+mixin MobileSectionResultSearch(type, title, typeBookHover, isHideArrow, isFilter)
+  .mobile-section-result-search
+    if type === 'lists'
+      h5.lists-title
+        if !isHideArrow
+          a(href="#").list-back
+            img(src="./assets/icons/icon-angle-left-blue.svg", alt="")
+        = title
+      form(action="#")
+        .search-main-action.d-flex.align-items-center.style-section
+          .filter-title.d-flex.align-items-center(style="font-size: 12px; text-transform: none; font-family: 'SFProDisplay-Medium';")
+            |Sắp xếp theo
+
+          +Button({ title: 'Liên quan', className: 'small' })
+          +Button({ title: 'Xem nhiều nhất', className: 'small' })
+          +Button({ title: 'Mới nhất', className: 'small' })
+          //- +Button({ title: 'Theo tên', className: 'small', icon: './assets/icons/icon-a-z.svg', isReverse: true })
+          select.custom-select
+            option(value="#") Theo tên
+            option(value="#") Từ A - Z
+            option(value="#") Từ Z - A
+
+        if isFilter
+          .search-main-filter.d-flex.align-items-center.style-section
+            .filter-title.d-flex.align-items-center 
+              img(src="./assets/icons/icon-filter-gray.svg", alt="")
+              |BỘ LỌC
+            .filter-tags.d-flex
+              +Button({ title: 'Sách điện tử', className: 'small primary-transparent' })
+              +Button({ title: 'Sách nói', className: 'small primary-transparent' })
+              +Button({ title: 'Video', className: 'small primary-transparent' })
+
+    if type === 'search'
+      form(action="#")
+        .search-main-action.d-flex.align-items-center.style-section
+          +Button({ title: 'Liên quan', className: 'small' })
+          +Button({ title: 'Xem nhiều nhất', className: 'small' })
+          +Button({ title: 'Mới nhất', className: 'small' })
+          //- +Button({ title: 'Theo tên', className: 'small', icon: './assets/icons/icon-a-z.svg', isReverse: true })
+          select.custom-select
+            option(value="#") Theo tên
+            option(value="#") Từ A - Z
+            option(value="#") Từ Z - A
+        
+        .search-main-filter.d-flex.align-items-center.style-section
+          .filter-title.d-flex.align-items-center 
+            img(src="./assets/icons/icon-filter-gray.svg", alt="")
+            |BỘ LỌC
+          .filter-tags.d-flex
+            +Button({ title: 'Sách điện tử', className: 'small primary-transparent' })
+            +Button({ title: 'Sách nói', className: 'small primary-transparent' })
+            +Button({ title: 'Video', className: 'small primary-transparent' })
+
+      h5.result-title Kết quả tìm kiếm cho từ “ Hai số phận...”: #[span 328] Kết quả 
+
+    .section-result-search-main.style-section 
+      .result-search-wrapper.d-flex.flex-wrap
+        each item in [...dataListBookVertical, ...dataListBookVertical,...dataListBookVertical, ...dataListBookVertical]
+          .item
+            include book-detail.pug 
+            +BookDetail(item, typeBookHover)
+
+      include pagination.pug

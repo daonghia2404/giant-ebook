@@ -1,0 +1,47 @@
+.modal-login {
+  background: rgba(0, 0, 0, 0.5);
+  .modal-content {
+    max-width: 340px;
+    margin: 0 auto;
+    .modal-body {
+      padding: 30px 0;
+    }
+  }
+  
+  .close {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 10px);
+    width: 20px;
+    opacity: 1;
+    img {
+      width: 100%;
+    }
+  }
+  .login-logo {
+    max-width: 140px;
+    margin: 0 auto 15px;
+  }
+  p {
+    color: $gray-dark;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: center;
+    &.small {
+      font-size: 12px;
+    }
+    &.bold {
+      font-family: 'SFProDisplay-Semibold';
+    }
+  }
+  .line {
+    margin-bottom: 15px;
+  }
+  .button-component {
+    width: 80%;
+    margin: 0 auto 15px;
+  }
+  a {
+    color: $primary-light;
+  }
+}

@@ -1,0 +1,206 @@
+.button-component {
+  outline: none;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-radius: 3px;
+  height: 32px;
+  padding: 0 15px;
+
+  .button-title {
+    font-size: 12px;
+    white-space: nowrap;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .button-icon {
+    flex: 0 0 16px;
+    max-width: 16px;
+    margin-right: 8px;
+  }
+
+  &.hide-dropdown-icon {
+    &:after {
+      display: none;
+    }
+  }
+
+  &.small {
+    padding: 6px 12px;
+    .button-title {
+      font-size: 12px;
+    }
+  }
+
+  &.reverse {
+    flex-direction: row-reverse;
+
+    .button-icon {
+      margin-right: 0;
+      margin-left: 8px;
+    }
+  }
+
+  &.icon {
+    .button-icon {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &.gray {
+    background: $gray-btn;
+    border-color: $gray-btn;
+    .button-title {
+      color: $white;
+    }
+    &:hover {
+      border-color: lighten($gray-btn, 5%);
+      background: lighten($gray-btn, 5%);
+    }
+  }
+
+  &.outline-primary {
+    border-color: $primary-dark;
+
+    .button-title {
+      color: $primary-dark;
+    }
+
+    &:hover {
+      border-color: $primary-light;
+      background: $primary-light;
+  
+      .button-title {
+        color: $white;
+      }
+      .button-icon {
+        fill: $white;
+      }
+    }
+    &:active {
+      border-color: $primary-dark;
+      background: $primary-dark;
+  
+      .button-title {
+        color: $white;
+      }
+    }
+  }
+
+  &.outline-gray {
+    border-color: $border-light;
+
+    &:hover,
+    &.active {
+      background: $border-light;
+    }
+
+    .button-title {
+      color: $gray-dark;
+    }
+  }
+
+  &.light-blue {
+    background-color: $primary-light-transparent;
+    color: $primary-light;
+    &:hover {
+      border-color: $primary-hover;
+      background: $primary-hover;
+      .button-title {
+        color: $white;
+      }
+    }
+    &:active,
+    &.active {
+      border-color: $primary-dark;
+      background: $primary-dark;
+      .button-title {
+        color: $white;
+      }
+    }
+  }
+
+  &.primary {
+    border-color: $primary-dark;
+    background: $primary-dark;
+
+    &:hover,
+    &.active {
+      background: $primary-hover;
+      border-color: $primary-hover;
+    }
+
+    .button-title {
+      color: $white;
+    }
+  }
+
+  &.primary-transparent {
+    border-color: $primary-transparent;
+    background: $primary-transparent;
+
+    .button-title {
+      color: $primary-light;
+    }
+  }
+
+  &.green {
+    border-color: $green;
+    background: $green;
+
+    &:hover,
+    &.active {
+      background: $green-hover;
+      border-color: $green-hover;
+    }
+
+    .button-title {
+      color: $white;
+    }
+  }
+
+  &.orange {
+    border-color: $orange;
+    background: $orange;
+    &:hover,
+    &.active {
+      background: $secondary-hover;
+      border-color: $secondary-hover;
+    }
+    .button-title {
+      color: $white;
+    }
+  }
+
+  &.secondary {
+    border-color: $secondary;
+    background: $secondary;
+    &:hover,
+    &.active {
+      border-color: $secondary-hover;
+      background: $secondary-hover;
+    }
+
+    .button-title {
+      color: $white;
+    }
+  }
+
+  &.primary-light {
+    border-color: $primary-light;
+    background: $primary-light;
+
+    &:hover,
+    &.active {
+      border-color: $primary-hover;
+      background: $primary-hover;
+    }
+
+    .button-title {
+      color: $white;
+    }
+  }
+}

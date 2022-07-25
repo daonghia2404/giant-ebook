@@ -1,0 +1,26 @@
+.footer {
+  .footer-wapper {
+    padding: 50px 0;
+
+    .footer-list {
+      .footer-list-content {
+        max-width: 860px;
+        margin: 0 auto;
+        .content-desciption {
+          font-size: 12px;
+          line-height: 2;
+          margin: 0;
+          color: $gray-dark;
+
+          @media screen and (max-width: 1199px) {
+            padding: 3px 15px;
+          }
+
+          a {
+            color: $primary-dark;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+mixin list-mobile(title, icon = './assets/icons/icon-book-mark-gray.svg', dataListBook)
+  .list-mobile.style-section
+    .list-mobile__title.pb-1.d-flex.align-items-center
+      img(src=`${icon}` alt="")
+      h3.d-inline-block.mb-0=title
+      a(href="#") (Xem tất cả)
+    .list-mobile__box
+      if dataListBook
+        each item in dataListBook
+          .item 
+            include book-detail.pug 
+            +BookDetail(item)
+      else 
+        each item in [1,2,3,4,5,6]
+          .item
+

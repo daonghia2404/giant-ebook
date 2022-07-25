@@ -1,0 +1,11 @@
+include ../common/data-breadcrumb.pug
+mixin breadcrumb()
+  section.style-section.section-breadcrumb
+    ul.breadcrumb-list.d-flex.flex-wrap
+      each item in dataBreadcrumb
+        if item.link 
+          li(class=`breadcrumb-items`)
+            a(href=`${item.link}`).breadcrumb-link= `${item.title} /`
+        else 
+          li(class=`breadcrumb-items active`)
+            span.breadcrumb-link= `${item.title}`

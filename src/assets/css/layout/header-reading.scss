@@ -1,0 +1,48 @@
+.header-reading {
+  border: 1px solid $border-light;
+  .header-wrapper {
+    height: 36px;
+    position: relative;
+    padding: 0 15px;
+    .header-btn-sidebar,
+    .control-item {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      transition: 0.3s ease;
+      opacity: 0.5;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
+      img {
+        margin: auto;
+      }
+    }
+    .control-item {
+      margin-left: 5px;
+    }
+    .header-control {
+      margin-left: auto;
+    }
+    .header-logo {
+      margin-left: 50px;
+      max-width: 135px;
+      img {
+        width: 100%;
+      }
+    }
+    .header-current-book {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 16px;
+      color: $gray-dark;
+      font-family: 'SFProDisplay-Semibold';
+      span {
+        color: $gray;
+      }
+    }
+  }
+}

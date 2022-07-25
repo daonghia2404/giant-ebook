@@ -1,0 +1,22 @@
+extends includes/layout/layout-authen.pug
+block pages
+  include includes/common/data-list-book.pug
+  - const isCategoryFilter = true
+  - const hideCategory = true
+  - const isSectionTotal = true
+
+  section.section-account-page 
+    .container 
+      include includes/components/section-breadcrumb.pug
+      +breadcrumb()
+
+      include includes/components/section-author-detail.pug
+
+      .section-wrapper 
+        .row 
+          .col-lg-3.pr-0
+            include includes/components/desktop-category.pug
+          .col-lg-9
+            
+            include includes/components/desktop-section-result-search.pug
+            +DesktopSectionResultSearch('lists', 'Sách của tác giả Brian Tracy')

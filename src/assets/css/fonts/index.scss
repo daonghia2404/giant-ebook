@@ -1,0 +1,42 @@
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+// .roboto-font {
+//   font-family: 'Roboto', sans-serif;
+// }
+
+@font-face {
+  font-family: 'SFProDisplay-Bold';
+  src: url('./fonts/SFProDisplay-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SFProDisplay-Light';
+  src: url('./fonts/SFProDisplay-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SFProDisplay-Medium';
+  src: url('./fonts/SFProDisplay-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url('./fonts/SFProDisplay-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SFProDisplay-Semibold';
+  src: url('./fonts/SFProDisplay-Semibold.ttf') format('truetype');
+}
+
+.SFProDisplay-Bold {
+  font-family: 'SFProDisplay-Bold', sans-serif;
+}
+.SFProDisplay-Light {
+  font-family: 'SFProDisplay-Light', sans-serif;
+}
+.SFProDisplay-Medium {
+  font-family: 'SFProDisplay-Medium', sans-serif;
+}
+.SFProDisplay {
+  font-family: 'SFProDisplay', sans-serif;
+}
+.SFProDisplay-Semibold {
+  font-family: 'SFProDisplay-Semibold', sans-serif;
+}

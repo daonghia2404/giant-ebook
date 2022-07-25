@@ -1,0 +1,11 @@
+extends includes/layout/layout-mobile.pug
+block pages 
+  - const isCategoryFilter = true
+  include includes/components/mobile-category.pug
+  include includes/common/data-list-book.pug
+
+  section.section-result-search-mobile
+    .section-wrapper 
+      include includes/components/mobile-section-result-search.pug
+      +MobileSectionResultSearch('search')
+  

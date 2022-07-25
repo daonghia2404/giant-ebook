@@ -1,0 +1,30 @@
+//-
+  Interface itemCarousel {
+    image?: string 
+    link?: string
+    imageTitle?:string
+    className?: string
+  }
+
+mixin itemCarousel(dataCarousel)
+  .item
+    a(href=`${dataCarousel.link}`)
+      img(src=`${dataCarousel.imageSlide}`, alt=`${dataCarousel.imageTitle}`)
+
+mixin itemBanner(dataBanner)
+  a(href=`${dataBanner.link}`, class=`${dataBanner.className}`)
+    img(src=`${dataBanner.imageBanner}`, alt=`${dataBanner.titleBanner}`, class=`${dataBanner.classNameImage}`)            
+
+section.section-home-banner
+  .row.home-banner__row
+    .col-sm-8.home-banner__left
+      #banner-carousel.owl-carousel
+        +itemCarousel({link:"#", imageSlide:"assets/images/image-home-banner-1.png"})
+        +itemCarousel({link:"#", imageSlide:"assets/images/image-home-banner-1.png"})
+        +itemCarousel({link:"#", imageSlide:"assets/images/image-home-banner-1.png"})
+        +itemCarousel({link:"#", imageSlide:"assets/images/image-home-banner-1.png"})
+        +itemCarousel({link:"#", imageSlide:"assets/images/image-home-banner-1.png"})
+    .col-sm-4.home-banner__right
+      +itemBanner({link:"#", imageBanner:'assets/images/image-home-banner-2.png', titleBanner:'image-home-banner-2',  className:"home-banner__right-img", classNameImage: 'w-100'})
+      +itemBanner({link:"#", imageBanner:'assets/images/image-home-banner-3.png', titleBanner:'image-home-banner-3',  className:"home-banner__right-img", classNameImage: 'w-100'})
+      +itemBanner({link:"#", imageBanner:'assets/images/image-home-banner-4.png', titleBanner:'image-home-banner-4',  className:"home-banner__right-img", classNameImage: 'w-100'})

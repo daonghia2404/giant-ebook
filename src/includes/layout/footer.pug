@@ -1,0 +1,50 @@
+include ../components/button.pug
+section.footer 
+  .container 
+    .row 
+      div(class ="col-12 col-lg-4 col-md-4")
+        div(class=" footer__content footer__info")  
+          a(href="/" class="footer__logo d-flex")
+            img(src="./assets/images/logo.svg" alt="" class="")
+          .footer-list.footer-recomend 
+            h3.footer-content-title Giới Thiệu 
+            p.footer-info-descrip Với mong muốn chia sẻ nguồn tri thức mở trên toàn thế giới, Giant Ebook mong muốn mang tới kho tàng tri thức nhiều định dạng từ sách điện tử, sách nói tới video tới cho mọi người.
+            .footer-detail.d-flex  
+              a.detail-title(href="#") Chi tiết 
+                img(src=" ./assets/icons/icon-arrow-right-blue.svg" alt="")                      
+      div(class ="col-12 col-lg-4 col-md-4")
+        .footer__content.footer-middle
+          h3.footer-content-title.mt-4.mb-3 Hướng dẫn
+          ul(class="footer__content-list")
+            li.content-list__item 
+              a(href="#")  Điều khoản sử dụng 
+            li.content-list__item 
+              a(href="#")  Chúng tôi là ai 
+            li.content-list__item 
+              a(href="#")  Đăng ký tài khoản 
+            li.content-list__item 
+              a(href="#")  Câu hỏi thường gặp  
+            li.content-list__item 
+              a(href="#")  Dịch vụ
+            li.content-list__item 
+              a(href="#")  Chủ đề nổi bật      
+      div(class ="col-12 col-lg-4 col-md-4")
+        .footer__content.footer-end    
+          h3.footer-content-title.mt-4.mb-3 Liên hệ  
+          .footer-contact.footer-list 
+            .footer-contact-item 
+              img(src="./assets/icons/icon-map-marker-gray.svg" alt="")  
+              span.footer-info-descrip 888 Hanoi, Vietnam
+            .footer-contact-item 
+              img(src="./assets/icons/icon-phone-gray.svg" alt="")  
+              span.footer-info-descrip (+84) 888 888 888 OR 986 999 999                                                   
+            .footer-contact-item 
+              img(src="./assets/icons/icon-mail-gray.svg" alt="")  
+              span.footer-info-descrip contact@giantebook.com  
+            .footer-contact-item 
+              +Button({ type: 'link', link: '#', title: 'Liên hệ ngay', className: 'primary' })
+
+section.footer-copyright
+  .footer-endbox.d-flex.justify-content-center
+    span Copyright © 2021 Giantebook.net, All rights reserved.                            
+

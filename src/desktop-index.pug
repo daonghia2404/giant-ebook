@@ -1,0 +1,59 @@
+extends includes/layout/layout.pug
+block pages 
+  include includes/common/data-list-book.pug
+
+  section.section-home-page 
+    .container 
+      .section-wrapper 
+        .row 
+          .col-lg-3.pr-0
+            include includes/components/desktop-category.pug
+          .col-lg-9
+            include includes/components/section-home-banner.pug
+
+            include includes/components/desktop-list-book-slider-full.pug
+            +list-video('Sách nổi bật', dataListBookVertical)
+            +list-video('Có thể bạn thích sách này', dataListBookVertical)
+
+            .list-mobile.style-section
+              .list-mobile__title.pb-1.d-flex.align-items-center
+                img(src="./assets/icons/icon-book-mark-gray.svg", alt="")
+                h3.d-inline-block.mb-0 Ebook
+                a(href="#") (Xem tất cả)
+
+              .section-book-list-5.d-flex.flex-wrap
+                each item in [...dataListBookVertical2, ...dataListBookVertical2,...dataListBookVertical2]
+                  .item
+                    include ./includes/components/book-detail.pug 
+                    +BookDetail(item, typeBookHover)
+
+            .row-custom
+              .col-custom-2
+                .list-mobile.style-section
+                  .list-mobile__title.pb-1.d-flex.align-items-center
+                    img(src="./assets/icons/icon-book-mark-gray.svg", alt="")
+                    h3.d-inline-block.mb-0 Ebbok
+                    a(href="#") (Xem tất cả)
+                  .section-book-list-2.d-flex.flex-wrap
+                    each item in [...dataListBookVertical2, ...dataListBookVertical2]
+                      .item
+                        include ./includes/components/book-detail.pug 
+                        +BookDetail(item, typeBookHover)
+              .col-custom-2
+                .list-mobile.style-section
+                  .list-mobile__title.pb-1.d-flex.align-items-center
+                    img(src="./assets/icons/icon-headphone-gray.svg", alt="")
+                    h3.d-inline-block.mb-0 Audio Book
+                    a(href="#") (Xem tất cả)
+
+                  .section-book-list-2.d-flex.flex-wrap
+                    each item in [...dataListBookVertical2, ...dataListBookVertical2]
+                      .item
+                        include ./includes/components/book-detail.pug 
+                        +BookDetail(item, typeBookHover)
+
+            .row-custom
+              each item in [{ title: 'Ebook', icon: './assets/icons/icon-book-mark-gray.svg' },{ title: 'Audio book', icon: './assets/icons/icon-headphone-gray.svg' },{ title: 'Video', icon: './assets/icons/icon-film-gray.svg' }]
+                .col-custom-3
+                  include includes/components/mobile-list-book-single-column.pug
+                  +list-mobile(item.title, item.icon, dataListBookHorizontal)

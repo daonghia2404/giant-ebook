@@ -1,0 +1,90 @@
+.list-video {
+  &__title {
+    border-bottom: 1px solid $line;
+
+    @media screen and (max-width: 425px) {
+      margin-right: 16px;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-family: 'SFProDisplay-Semibold';
+      line-height: 19px;
+      color: $text-gray;
+      margin-right: 8px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $gray;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0px;
+      transition: 0.3s ease;
+
+      &:hover {
+        color: $primary-dark;
+      }
+    }
+  }
+
+  &__box {
+    padding-left: 16px;
+
+    @media (max-width: 575px) {
+      padding-left: 0;
+    }
+
+    @media screen and (max-width: 425px) {
+      padding-left: 24px;
+      margin-right: -16px;
+    }
+
+    &.up-nav {
+      button {
+        top: 34%;
+      }
+    }
+
+    button {
+      background-color: #525f7f !important;
+      border-radius: 5px;
+      width: 24px;
+      height: 68px;
+      opacity: 0.5;
+      position: absolute;
+      top: 37%;
+      transform: translateY(-50%);
+      color: $white;
+
+      &.disabled {
+        display: none;
+      }
+
+      @media (max-width: 575px) {
+        display: none !important;
+      }
+
+      &.owl-prev {
+        left: 0px;
+      }
+
+      &.owl-next {
+        right: 0px;
+      }
+    }
+  }
+
+  &.slide-mobile {
+    .book-detail-vertical {
+      padding: 15px 5px;
+    }
+
+    .list-video__box {
+      @media (max-width: 575px) {
+        padding-left: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+mixin section-book-detail-author(data)
+	.section-book-detail-author.style-section
+		h3.section-book-detail-author-title.m-0 Thông tin chi tiết
+		.section-book-detail-line 
+		.book-detail-author.d-flex
+			.item.d-flex
+				.author-profile
+					img(src="./assets/images/image-sample-avatar.png")
+				.book-detail
+					h4.book-author-name.book-detail-item
+						span Tác giả: 
+						a(href="#")= data.authorName
+					.book-chapter-count.book-detail-item 
+						span Số chương: 
+						span= data.chaptersCount
+					.book-audio-time.book-detail-item 
+						span Thời lượng: 
+						span= data.timeLength
+					.book-listener-count.book-detail-item 
+						span Lượt nghe: 
+						span= data.listenersCount
+			.item
+				.book-rating.d-flex.align-items-center
+					.rating-number.d-flex.align-items-center.justify-content-center
+						span=data.bookRating
+					.rating-stars
+						img(src="./assets/icons/icon-star-fill-yellow.svg")
+						img(src="./assets/icons/icon-star-fill-yellow.svg")
+						img(src="./assets/icons/icon-star-fill-yellow.svg")
+						img(src="./assets/icons/icon-star-fill-yellow.svg")
+						img(src="./assets/icons/icon-star-fill-yellow.svg")
+				.book-type.book-detail-item.d-flex.align-items-center
+					img(src="./assets/icons/icon-tag-gray.svg")
+					span= "Thể loại: " + data.bookType  
+				.book-publisher.book-detail-item.d-flex.align-items-center
+					img(src="./assets/icons/icon-building-gray.svg")
+					span= "Nhà xuất bản: " + data.bookPublisher
+				.book-time-update.book-detail-item.d-flex.align-items-center
+					img(src="./assets/icons/icon-clock-2-gray.svg")
+					span= "Ngày cập nhật: " + data.timeUpdate

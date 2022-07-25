@@ -1,0 +1,76 @@
+.audio__list {
+	padding-left: 0;
+	background-color: $white;
+	height: calc(42px * 10);
+	overflow-y: scroll;
+	margin-bottom: 0;
+	@media (max-width: 575px) {
+		border-top: 1px solid $border-light;
+		border-bottom: 1px solid $border-light;
+	}
+	@include styleScrollBar;
+
+	&-item:nth-child(even) {
+		background-color: $table-row-even;
+	}
+
+	&-item {
+		padding: 10px 15px !important;
+    cursor: pointer;
+
+    &:hover {
+      p {
+        color: $secondary;
+      }
+    }
+
+		&.active {
+			background-color: $orange-transparent;
+
+      p {
+        color: $secondary;
+      }
+
+			.item__index {
+				display: none !important;
+			}
+
+			.item__img {
+				display: block;
+			}
+		}
+	}
+
+	&-item {
+		border-bottom: 0.5px solid $table-border;
+
+		.item__img {
+			width: 21px;
+			display: none;
+		}
+
+		span,
+		p {
+			font-size: 13px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 21px;
+			color: $text-black;
+		}
+
+		.item__index {
+			width: 21px;
+		}
+
+		p {
+			flex: 1;
+      @include ellipsis(1);
+			overflow: hidden;
+      margin: 0 10px;
+		}
+	}
+
+	&-item:last-child {
+		border-bottom: none;
+	}
+}

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Giant Ebook</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/plyr@3.6.4/dist/plyr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/rangeslider-js@3.2.5/dist/styles.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+  </head>
+  <body>
+    <header class="header"> 
+      <div class="container"> 
+        <div class="header-wrapper d-flex align-items-center justify-content-between"> 
+          <div class="header-logo"> <img src="./assets/images/logo.svg" alt=""></div>
+          <form class="header-search d-flex" action="#">
+            <div class="search-filter">
+              <select style="display: none;">
+                <option value="all">Tất cả các sách</option>
+                <option value="ebook">Ebook</option>
+                <option value="audio-book">Audio book</option>
+                <option value="video-book">Video</option>
+              </select>
+              <div class="dropdown js-dropdown-option">
+                <button class="dropdown-toggle button-component hide-dropdown-icon d-flex align-items-center justify-content-center" id="headerSearchFilter" data-toggle="dropdown" aria-expanded="false" type="button"><svg class="button-icon" fill="#00559F" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.66667 8H7.33333V6.66667H4.66667V8ZM0 0V1.33333H12V0H0ZM2 4.66667H10V3.33333H2V4.66667Z"/></svg><span class="button-title">Tất cả các sách</span></button>
+                <ul class="dropdown-menu custom-style-dropdown" aria-labelledby="headerSearchFilter">
+                  <li>
+                    <div class="dropdown-item" data-selectvalue="all">
+                      <div class="button-component d-flex align-items-center justify-content-center"><svg class="button-icon" fill="#00559F" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.66667 8H7.33333V6.66667H4.66667V8ZM0 0V1.33333H12V0H0ZM2 4.66667H10V3.33333H2V4.66667Z"/></svg><span class="button-title">Tất cả các sách</span></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="dropdown-item" data-selectvalue="ebook">
+                      <div class="button-component d-flex align-items-center justify-content-center"><svg class="button-icon" width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.16683H2.66667C2.31304 2.16683 1.97391 2.30731 1.72386 2.55735C1.47381 2.8074 1.33333 3.14654 1.33333 3.50016C1.33333 3.85378 1.47381 4.19292 1.72386 4.44297C1.97391 4.69302 2.31304 4.8335 2.66667 4.8335H12V13.5002C12 13.677 11.9298 13.8465 11.8047 13.9716C11.6797 14.0966 11.5101 14.1668 11.3333 14.1668H2.66667C1.95942 14.1668 1.28115 13.8859 0.781048 13.3858C0.280951 12.8857 0 12.2074 0 11.5002V3.50016C0 2.79292 0.280951 2.11464 0.781048 1.61454C1.28115 1.11445 1.95942 0.833496 2.66667 0.833496H11.3333C11.5101 0.833496 11.6797 0.903734 11.8047 1.02876C11.9298 1.15378 12 1.32335 12 1.50016V2.16683ZM11.3333 4.16683H2.66667C2.48986 4.16683 2.32029 4.09659 2.19526 3.97157C2.07024 3.84654 2 3.67697 2 3.50016C2 3.32335 2.07024 3.15378 2.19526 3.02876C2.32029 2.90373 2.48986 2.8335 2.66667 2.8335H11.3333V4.16683Z" fill="#2E82BC"/></svg><span class="button-title">Ebook</span></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="dropdown-item" data-selectvalue="audio-book">
+                      <div class="button-component d-flex align-items-center justify-content-center"><svg class="button-icon" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 0.166504C2.68667 0.166504 0 2.85317 0 6.1665V10.8332C0 11.9365 0.896667 12.8332 2 12.8332H4V7.49984H1.33333V6.1665C1.33333 3.58984 3.42333 1.49984 6 1.49984C8.57667 1.49984 10.6667 3.58984 10.6667 6.1665V7.49984H8V12.8332H10C11.1033 12.8332 12 11.9365 12 10.8332V6.1665C12 2.85317 9.31333 0.166504 6 0.166504Z" fill="#00559F"/></svg><span class="button-title">Audio book</span></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="dropdown-item" data-selectvalue="video-book">
+                      <div class="button-component d-flex align-items-center justify-content-center"><svg class="button-icon" width="12" height="17" viewBox="0 0 12 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.5312 3.229L8.9375 0.635254C8.65625 0.354004 8.28125 0.166504 7.875 0.166504H1.5C0.65625 0.166504 0 0.854004 0 1.6665V14.6665C0 15.5103 0.65625 16.1665 1.5 16.1665H10.5C11.3125 16.1665 12 15.5103 12 14.6665V4.2915C12 3.88525 11.8125 3.51025 11.5312 3.229ZM10.375 4.1665H8V1.7915L10.375 4.1665ZM1.5 14.6665V1.6665H6.5V4.9165C6.5 5.354 6.8125 5.6665 7.25 5.6665H10.5V14.6665H1.5ZM8.625 8.07275L7 9.729V8.5415C7 8.19775 6.71875 7.9165 6.375 7.9165H3.125C2.75 7.9165 2.5 8.19775 2.5 8.5415V11.7915C2.5 12.1665 2.75 12.4165 3.125 12.4165H6.375C6.71875 12.4165 7 12.1665 7 11.7915V10.6353L8.625 12.2915C8.9375 12.604 9.5 12.3853 9.5 11.9165V8.44775C9.5 7.979 8.9375 7.76025 8.625 8.07275Z" fill="#2E82BC"/></svg><span class="button-title">Video</span></div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="search-input"> 
+              <input type="text" placeholder="Nhập tên sách, tác giả bạn muốn tìm kiếm...">
+            </div>
+            <div class="search-btn"> 
+                  <button class="button-component d-flex align-items-center justify-content-center primary icon" type="button"><img class="button-icon" src="./assets/icons/icon-search-white.svg" alt="">
+                  </button>
+            </div>
+          </form>
+          <div class="header-btn-groups d-flex">
+            <div data-toggle="modal" data-target="#modalLogin">
+                  <button class="button-component d-flex align-items-center justify-content-center outline-primary" type="button"><svg fill="#00559F" class="button-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.33333 6.66683H3.33333V4.66683H2V6.66683H0V8.00016H2V10.0002H3.33333V8.00016H5.33333V6.66683ZM12 7.3335C13.1033 7.3335 13.9933 6.43683 13.9933 5.3335C13.9933 4.23016 13.1033 3.3335 12 3.3335C11.7867 3.3335 11.5833 3.36683 11.39 3.43016C11.7667 3.97016 11.9933 4.62683 11.9933 5.3335C11.9933 6.04016 11.7667 6.69683 11.39 7.23683C11.5833 7.30016 11.7867 7.3335 12 7.3335ZM8.66667 7.3335C9.77 7.3335 10.66 6.43683 10.66 5.3335C10.66 4.23016 9.77 3.3335 8.66667 3.3335C7.56333 3.3335 6.66667 4.23016 6.66667 5.3335C6.66667 6.43683 7.56333 7.3335 8.66667 7.3335ZM13.08 8.7735C13.6333 9.25683 14 9.88016 14 10.6668V12.0002H16V10.6668C16 9.64016 14.4167 9.01016 13.08 8.7735ZM8.66667 8.66683C7.33333 8.66683 4.66667 9.3335 4.66667 10.6668V12.0002H12.6667V10.6668C12.6667 9.3335 10 8.66683 8.66667 8.66683Z"/></svg><span class="button-title">Giant Club</span>
+                  </button>
+            </div>
+            <div class="dropdown">
+              <button class="dropdown-toggle button-component outline-primary hide-dropdown-icon d-flex align-items-center justify-content-center" id="headerAccountDropdown" data-toggle="dropdown" aria-expanded="false" type="button"><img class="button-icon" src="./assets/icons/icon-user-circle-blue.svg" alt=""><span class="button-title">Hoà An</span></button>
+              <div class="dropdown-menu account-dropdown dropdown-menu-right" aria-labelledby="headerAccountDropdown">
+                <div class="account-header d-flex align-items-center"> 
+                  <div class="account-avatar"> <img src="./assets/images/image-sample-avatar.png" alt=""></div>
+                  <div class="account-info"> 
+                    <h6 class="account-name">Nguyễn Hoà An</h6>
+                    <p class="account-des">Tài khoản V-VIP</p>
+                  </div>
+                </div>
+                <div class="account-lists"> <a class="list-item d-flex align-items-center" href="#">
+                    <div class="item-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.00067 1.6419C7.37092 0.411655 9.48842 0.452488 10.8085 1.7749C12.128 3.0979 12.1735 5.20491 10.9462 6.57924L5.9995 11.5329L1.054 6.57924C-0.173332 5.20491 -0.127248 3.0944 1.19167 1.7749C2.51292 0.454238 4.62633 0.409905 6.00067 1.6419Z" fill="#00559F"/></svg></div><span>Tủ sách yêu thích của bạn</span></a><a class="list-item d-flex align-items-center" href="#">
+                    <div class="item-icon"><svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.36375 9.49091H1.5092C1.02721 9.49091 0.636475 9.88164 0.636475 10.3636H0.636475C0.636475 10.8456 1.02721 11.2364 1.5092 11.2364H9.36375C9.36375 11.2364 9.01466 10.7564 9.01466 10.3636C9.01466 9.97091 9.36375 9.49091 9.36375 9.49091Z" fill="#18558E"/><path fill-rule="evenodd" clip-rule="evenodd" d="M8.49102 0.763641H5.17466V4.25455L3.77829 3.20728L2.38193 4.25455V0.763641H1.5092C1.02745 0.764218 0.637052 1.15461 0.636475 1.63637V9.51029C0.865686 9.27465 1.18047 9.14175 1.5092 9.14182H9.36375V1.63637C9.36317 1.15461 8.97277 0.764218 8.49102 0.763641Z" fill="#00559F"/></svg></div><span>Sách bạn đã đọc</span></a><a class="list-item d-flex align-items-center" href="#">
+                    <div class="item-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.2501 12.25H7.58342V3.5C7.58342 3.03587 7.76779 2.59075 8.09598 2.26256C8.42417 1.93437 8.86929 1.75 9.33342 1.75H12.2501C12.4048 1.75 12.5532 1.81146 12.6626 1.92085C12.772 2.03025 12.8334 2.17862 12.8334 2.33333V11.6667C12.8334 11.8214 12.772 11.9697 12.6626 12.0791C12.5532 12.1885 12.4048 12.25 12.2501 12.25ZM6.41675 12.25H1.75008C1.59537 12.25 1.447 12.1885 1.3376 12.0791C1.22821 11.9697 1.16675 11.8214 1.16675 11.6667V2.33333C1.16675 2.17862 1.22821 2.03025 1.3376 1.92085C1.447 1.81146 1.59537 1.75 1.75008 1.75H4.66675C5.13088 1.75 5.576 1.93437 5.90419 2.26256C6.23237 2.59075 6.41675 3.03587 6.41675 3.5V12.25ZM6.41675 12.25H7.58342V13.4167H6.41675V12.25Z" fill="#00559F"/></svg></div><span>Sách bạn đã xem</span></a><a class="list-item d-flex align-items-center" href="#">
+                    <div class="item-icon"><svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.916585 11.8333C0.761876 11.8333 0.613503 11.7719 0.504106 11.6625C0.39471 11.5531 0.333252 11.4047 0.333252 11.25V0.74999C0.333252 0.59528 0.39471 0.446907 0.504106 0.337511C0.613503 0.228115 0.761876 0.166656 0.916585 0.166656H9.08325C9.23796 0.166656 9.38633 0.228115 9.49573 0.337511C9.60513 0.446907 9.66658 0.59528 9.66658 0.74999V11.25C9.66658 11.4047 9.60513 11.5531 9.49573 11.6625C9.38633 11.7719 9.23796 11.8333 9.08325 11.8333H0.916585ZM6.74992 8.33332L9.66658 5.99999L6.74992 3.66666V5.41666H3.24992V6.58332H6.74992V8.33332Z" fill="#00559F"/></svg></div><span>Đăng xuất</span></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="modal-login modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="modalLogin" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <button class="close" data-dismiss="modal" aria-label="Close"><img src="./assets/icons/icon-close-circle-gray.svg" alt=""></button>
+          <div class="modal-body">
+            <div class="login-logo"> <img src="./assets/images/logo-nxb.svg" alt=""></div>
+            <p class="mb-1">Đăng nhập với tài khoản NXB Xây dựng của bạn</p>
+            <p class="bold">Giantebook.net</p>
+            <div class="line"> </div>
+            <p class="small">Bạn đã có tài khoản</p><a class="button-component d-flex align-items-center justify-content-center secondary big" href="#"><span class="button-title">Đăng nhập</span></a>
+            <p class="small">Bạn chưa có tài khoản? <a href="#">Đăng ký ngay!</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="giant-book-desktop-body"> 
+      <section class="section-account-page"> 
+        <div class="container"> 
+          <div class="section-wrapper"> 
+            <div class="row"> 
+              <div class="col-lg-3 pr-0">
+                <section class="style-section section-category account-sidebar">
+                  <div class="account-header d-flex align-items-center"> 
+                    <div class="account-avatar"> <img src="./assets/images/image-sample-avatar.png" alt=""></div>
+                    <div class="account-info"> 
+                      <h6 class="account-name">Nguyễn Hoà An</h6>
+                      <p class="account-des">Tài khoản V-VIP</p>
+                    </div>
+                  </div>
+                  <ul class="category-main mt-4">
+                    <li class="category-item"> <a class="item d-flex align-items-center" href="#"><svg class="item-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.00067 1.6419C7.37092 0.411655 9.48842 0.452488 10.8085 1.7749C12.128 3.0979 12.1735 5.20491 10.9462 6.57924L5.9995 11.5329L1.054 6.57924C-0.173332 5.20491 -0.127248 3.0944 1.19167 1.7749C2.51292 0.454238 4.62633 0.409905 6.00067 1.6419Z" fill="#00559F"/></svg><span class="item-title">Tủ sách yêu thích của bạn</span></a>
+                    </li>
+                    <li class="category-item"> 
+                      <div class="item d-flex align-items-center"><svg class="item-icon" width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.36375 9.49091H1.5092C1.02721 9.49091 0.636475 9.88164 0.636475 10.3636H0.636475C0.636475 10.8456 1.02721 11.2364 1.5092 11.2364H9.36375C9.36375 11.2364 9.01466 10.7564 9.01466 10.3636C9.01466 9.97091 9.36375 9.49091 9.36375 9.49091Z" fill="#18558E"/><path fill-rule="evenodd" clip-rule="evenodd" d="M8.49102 0.763641H5.17466V4.25455L3.77829 3.20728L2.38193 4.25455V0.763641H1.5092C1.02745 0.764218 0.637052 1.15461 0.636475 1.63637V9.51029C0.865686 9.27465 1.18047 9.14175 1.5092 9.14182H9.36375V1.63637C9.36317 1.15461 8.97277 0.764218 8.49102 0.763641Z" fill="#00559F"/></svg><span class="item-title">Sách bạn đã đọc</span><svg class="item-angle" width="8" height="7" viewBox="0 0 8 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2.1L6.4 0.5L4 2.9L1.6 0.5L0 2.1L4 6.1L8 2.1Z" fill="#8898AA"/></svg>
+                      </div>
+                      <ul class="item-sub-category"> 
+                        <li class="category-item"> <a class="item d-flex align-items-center" href="#"><svg class="item-icon" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.5 0.5H1.5C0.9475 0.5 0.505 0.9475 0.505 1.5L0.5 9.5L4 8L7.5 9.5V1.5C7.5 0.9475 7.0525 0.5 6.5 0.5Z" fill="#00559F"/></svg><span class="item-title">Ebook bạn đã đọc</span></a></li>
+                        <li class="category-item"> <a class="item d-flex align-items-center" href="#"><svg class="item-icon" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 0.166504C2.68667 0.166504 0 2.85317 0 6.1665V10.8332C0 11.9365 0.896667 12.8332 2 12.8332H4V7.49984H1.33333V6.1665C1.33333 3.58984 3.42333 1.49984 6 1.49984C8.57667 1.49984 10.6667 3.58984 10.6667 6.1665V7.49984H8V12.8332H10C11.1033 12.8332 12 11.9365 12 10.8332V6.1665C12 2.85317 9.31333 0.166504 6 0.166504Z" fill="#00559F"/></svg><span class="item-title">Audio book bạn đã nghe</span></a></li>
+                        <li class="category-item"> <a class="item d-flex align-items-center" href="#"><svg class="item-icon" width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.417 0.166504H15.167V0.791504C15.167 1.01025 14.9795 1.1665 14.792 1.1665H13.542C13.3232 1.1665 13.167 1.01025 13.167 0.791504V0.166504H3.16699V0.791504C3.16699 1.01025 2.97949 1.1665 2.79199 1.1665H1.54199C1.32324 1.1665 1.16699 1.01025 1.16699 0.791504V0.166504H0.916992C0.479492 0.166504 0.166992 0.510254 0.166992 0.916504V11.4165C0.166992 11.854 0.479492 12.1665 0.916992 12.1665H1.16699V11.5415C1.16699 11.354 1.32324 11.1665 1.54199 11.1665H2.79199C2.97949 11.1665 3.16699 11.354 3.16699 11.5415V12.1665H13.167V11.5415C13.167 11.354 13.3232 11.1665 13.542 11.1665H14.792C14.9795 11.1665 15.167 11.354 15.167 11.5415V12.1665H15.417C15.8232 12.1665 16.167 11.854 16.167 11.4165V0.916504C16.167 0.510254 15.8232 0.166504 15.417 0.166504ZM3.16699 9.7915C3.16699 10.0103 2.97949 10.1665 2.79199 10.1665H1.54199C1.32324 10.1665 1.16699 10.0103 1.16699 9.7915V8.5415C1.16699 8.354 1.32324 8.1665 1.54199 8.1665H2.79199C2.97949 8.1665 3.16699 8.354 3.16699 8.5415V9.7915ZM3.16699 6.7915C3.16699 7.01025 2.97949 7.1665 2.79199 7.1665H1.54199C1.32324 7.1665 1.16699 7.01025 1.16699 6.7915V5.5415C1.16699 5.354 1.32324 5.1665 1.54199 5.1665H2.79199C2.97949 5.1665 3.16699 5.354 3.16699 5.5415V6.7915ZM3.16699 3.7915C3.16699 4.01025 2.97949 4.1665 2.79199 4.1665H1.54199C1.32324 4.1665 1.16699 4.01025 1.16699 3.7915V2.5415C1.16699 2.354 1.32324 2.1665 1.54199 2.1665H2.79199C2.97949 2.1665 3.16699 2.354 3.16699 2.5415V3.7915ZM12.167 10.2915C12.167 10.5103 11.9795 10.6665 11.792 10.6665H4.54199C4.32324 10.6665 4.16699 10.5103 4.16699 10.2915V7.2915C4.16699 7.104 4.32324 6.9165 4.54199 6.9165H11.792C11.9795 6.9165 12.167 7.104 12.167 7.2915V10.2915ZM12.167 5.0415C12.167 5.26025 11.9795 5.4165 11.792 5.4165H4.54199C4.32324 5.4165 4.16699 5.26025 4.16699 5.0415V2.0415C4.16699 1.854 4.32324 1.6665 4.54199 1.6665H11.792C11.9795 1.6665 12.167 1.854 12.167 2.0415V5.0415ZM15.167 9.7915C15.167 10.0103 14.9795 10.1665 14.792 10.1665H13.542C13.3232 10.1665 13.167 10.0103 13.167 9.7915V8.5415C13.167 8.354 13.3232 8.1665 13.542 8.1665H14.792C14.9795 8.1665 15.167 8.354 15.167 8.5415V9.7915ZM15.167 6.7915C15.167 7.01025 14.9795 7.1665 14.792 7.1665H13.542C13.3232 7.1665 13.167 7.01025 13.167 6.7915V5.5415C13.167 5.354 13.3232 5.1665 13.542 5.1665H14.792C14.9795 5.1665 15.167 5.354 15.167 5.5415V6.7915ZM15.167 3.7915C15.167 4.01025 14.9795 4.1665 14.792 4.1665H13.542C13.3232 4.1665 13.167 4.01025 13.167 3.7915V2.5415C13.167 2.354 13.3232 2.1665 13.542 2.1665H14.792C14.9795 2.1665 15.167 2.354 15.167 2.5415V3.7915Z" fill="#00559F"/></svg><span class="item-title">Video bạn đã xem</span></a></li>
+                      </ul>
+                    </li>
+                    <li class="category-item"> <a class="item d-flex align-items-center" href="#"><svg class="item-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.2501 12.25H7.58342V3.5C7.58342 3.03587 7.76779 2.59075 8.09598 2.26256C8.42417 1.93437 8.86929 1.75 9.33342 1.75H12.2501C12.4048 1.75 12.5532 1.81146 12.6626 1.92085C12.772 2.03025 12.8334 2.17862 12.8334 2.33333V11.6667C12.8334 11.8214 12.772 11.9697 12.6626 12.0791C12.5532 12.1885 12.4048 12.25 12.2501 12.25ZM6.41675 12.25H1.75008C1.59537 12.25 1.447 12.1885 1.3376 12.0791C1.22821 11.9697 1.16675 11.8214 1.16675 11.6667V2.33333C1.16675 2.17862 1.22821 2.03025 1.3376 1.92085C1.447 1.81146 1.59537 1.75 1.75008 1.75H4.66675C5.13088 1.75 5.576 1.93437 5.90419 2.26256C6.23237 2.59075 6.41675 3.03587 6.41675 3.5V12.25ZM6.41675 12.25H7.58342V13.4167H6.41675V12.25Z" fill="#00559F"/></svg><span class="item-title">Sách bạn đã xem</span></a>
+                    </li>
+                    <li class="category-item"> <a class="item d-flex align-items-center" href="#"><svg class="item-icon" width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.916585 11.8333C0.761876 11.8333 0.613503 11.7719 0.504106 11.6625C0.39471 11.5531 0.333252 11.4047 0.333252 11.25V0.74999C0.333252 0.59528 0.39471 0.446907 0.504106 0.337511C0.613503 0.228115 0.761876 0.166656 0.916585 0.166656H9.08325C9.23796 0.166656 9.38633 0.228115 9.49573 0.337511C9.60513 0.446907 9.66658 0.59528 9.66658 0.74999V11.25C9.66658 11.4047 9.60513 11.5531 9.49573 11.6625C9.38633 11.7719 9.23796 11.8333 9.08325 11.8333H0.916585ZM6.74992 8.33332L9.66658 5.99999L6.74992 3.66666V5.41666H3.24992V6.58332H6.74992V8.33332Z" fill="#00559F"/></svg><span class="item-title">Đăng xuất</span></a>
+                    </li>
+                  </ul>
+                </section>
+              </div>
+              <div class="col-lg-9">
+                                <div class="desktop-section-result-search">
+                                  <div class="section-result-search-main style-section"> 
+                                    <h5 class="lists-title">Ebook bạn đã đọc</h5>
+                                    <form class="search-main-action d-flex align-items-center" action="#"> 
+                                      <h6 class="action-title">Sắp xếp theo</h6>
+                                                      <button class="button-component d-flex align-items-center justify-content-center outline-gray small" type="button"><span class="button-title">Xem nhiều nhất</span>
+                                                      </button>
+                                                      <button class="button-component d-flex align-items-center justify-content-center outline-gray small" type="button"><span class="button-title">Mới nhất</span>
+                                                      </button>
+                                      <select class="custom-select">
+                                        <option value="#">Theo tên, từ A - Z</option>
+                                        <option value="#">Theo tên, từ Z - A</option>
+                                      </select>
+                                    </form>
+                                    <div class="result-search-wrapper d-flex flex-wrap"> 
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-1.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Hành trình về phương Đông</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Blair T.Spalding</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-2.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Dám bị ghét</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Kishimi Ichiro, Koga Fumitake</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-3.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Sách - Cẩm nang cấu trúc tiếng anh</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Trang Anh</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-4.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Thuật Quản Lý Thời Gian</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Brian Tracy</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-5.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Kinh Doanh Như Một Cuộc Chơi</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Richard Branson</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-1.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Hành trình về phương Đông</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Blair T.Spalding</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-2.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Dám bị ghét</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Kishimi Ichiro, Koga Fumitake</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-3.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Sách - Cẩm nang cấu trúc tiếng anh</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Trang Anh</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-4.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Thuật Quản Lý Thời Gian</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Brian Tracy</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-5.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Kinh Doanh Như Một Cuộc Chơi</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Richard Branson</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-1.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Hành trình về phương Đông</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Blair T.Spalding</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-2.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Dám bị ghét</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Kishimi Ichiro, Koga Fumitake</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-3.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Sách - Cẩm nang cấu trúc tiếng anh</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Trang Anh</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-4.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Thuật Quản Lý Thời Gian</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Brian Tracy</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-5.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Kinh Doanh Như Một Cuộc Chơi</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Richard Branson</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-1.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Hành trình về phương Đông</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Blair T.Spalding</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-2.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Dám bị ghét</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Kishimi Ichiro, Koga Fumitake</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-3.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Sách - Cẩm nang cấu trúc tiếng anh</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Trang Anh</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-4.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Thuật Quản Lý Thời Gian</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Brian Tracy</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-5.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Kinh Doanh Như Một Cuộc Chơi</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Richard Branson</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-1.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Hành trình về phương Đông</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Blair T.Spalding</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-2.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Dám bị ghét</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Kishimi Ichiro, Koga Fumitake</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-3.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Sách - Cẩm nang cấu trúc tiếng anh</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Trang Anh</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-4.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Thuật Quản Lý Thời Gian</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Brian Tracy</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                      <div class="item">
+                                                                <div class="book-detail-vertical">
+                                                                  <div class="book-detail">
+                                                                    <div class="book-detail-img"><a href="#"> <img src="./assets/images/image-sample-book-5.png" alt="">
+                                                                        <div class="book-hover-overlay"><img class="book-hover-icon" src="./assets/icons/icon-hover-book.svg" alt=""></div></a></div>
+                                                                    <div class="book-detail-info">
+                                                                      <h6 class="info-title mb-0"><a href="#">Kinh Doanh Như Một Cuộc Chơi</a></h6>
+                                                                      <div class="info-desc">
+                                                                        <div class="info-desc-inner">
+                                                                          <div class="info-desc-author"><span></span></div>
+                                                                          <div class="info-desc-type"><span>Richard Branson</span></div>
+                                                                        </div>
+                                                                        <div class="info-desc-view"><span></span></div>
+                                                                        <div class="info-desc-rate"><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span><span class="rate-star"><img src="./assets/icons/icon-star-fill-yellow.svg" alt=""></span>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                      </div>
+                                    </div>
+                                    <div class="component__pagination"> 
+                                      <div class="container">
+                                        <div class="pagination">
+                                          <ul class="pagination__list d-flex">
+                                            <li class="pagination__list-btn"><a href="#"><img src="./assets/icons/icon-angle-line-left-gray.svg" alt=""></a></li>
+                                            <li class="pagination__list-btn"><a href="#"><img src="./assets/icons/icon-angle-left-gray.svg" alt=""></a></li>
+                                            <li class="pagination__list-btn active"><a href="#">1</a></li>
+                                            <li class="pagination__list-btn"><a href="#">2</a></li>
+                                            <li class="pagination__list-btn bg-none"><a href="#"> <img src="./assets/icons/icon-dots-gray.svg" alt=""></a></li>
+                                            <li class="pagination__list-btn"><a href="#">29</a></li>
+                                            <li class="pagination__list-btn"><a href="#">30</a></li>
+                                            <li class="pagination__list-btn"><a href="#"><img src="./assets/icons/icon-angle-right-gray.svg" alt=""></a></li>
+                                            <li class="pagination__list-btn"><a href="#"><img src="./assets/icons/icon-angle-line-right-gray.svg" alt=""></a></li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section class="footer"> 
+      <div class="footer-wapper bg-white">
+        <div class="container"> 
+          <div class="footer-list">
+            <div class="footer-list-logo d-flex justify-content-center"> <img src="./assets/images/logo.svg" alt=""></div>
+            <div class="footer-list-content text-center">
+              <p class="content-desciption">GiantEbook – Kho tàng sách mở. Website luôn cập nhật những cuốn sách, các ấn phẩm thuộc nhiều thể loại khác nhau như văn học nghệ thuật, kinh tế, văn hóa – xã hội, chính trị pháp luật, khoa học – công nghệ, giáo dục, hồi ký, sách truyện, sách thiếu nhi, sách tôn giáo, sách tâm lý – kỹ năng sống,… một cách nhanh chóng. Hỗ trợ bạn đọc sử dụng trên mọi thiết bị công nghệ như di động, máy tính bảng, laptop,… </p>
+              <p class="content-desciption">Nội dung trên GiantEbook (GEB) được mọi người trong cộng đồng đóng góp. Ban Quản trị GEB không chịu trách nhiệm về nội dung được đăng tải.</p>
+              <p class="content-desciption">Các đường dẫn từ GEB tới trang web thứ ba không đồng nghĩa có được sự chấp thuận của Ban Quản trị GEB.</p>
+              <p class="content-desciption">Các vấn đề bản quyền vui lòng liên hệ <a class="link-problem text-uppercase" href="#">tại đây </a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer-copyright">
+      <div class="footer-endbox d-flex justify-content-center"><span>Copyright © 2021 Giantebook.net, All rights reserved.    </span></div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"> </script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.4/dist/plyr.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/rangeslider-js@3.2.5/dist/rangeslider-js.min.js"> </script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+extends includes/layout/layout.pug
+block pages 
+  section.section-guide
+    .guide-title Button
+    .guide-section.guide-button
+      include includes/components/button.pug
+      +Button({ title: 'Giant Club', icon: 'icon-user-plus-blue.svg', className: 'outline-primary' })
+      +Button({ type: 'link', link: '#', title: 'Liên hệ ngay', className: 'primary' })
+      +Button({ title: 'Đọc ebook', icon: './assets/icons/icon-book-outline-white.svg', className: 'green' })
+      +Button({ type: 'link', link: '#', title: 'Nghe audio', icon: './assets/icons/icon-book-outline-white.svg', className: 'orange' })
+      +Button({ title: 'Xem video', icon: './assets/icons/icon-book-outline-white.svg', className: 'primary-light' })
+
+  
+  section.section-guide 
+    .guide-title Section List Book
+    .guide-section.guide-list-book 
+      p Desktop List book with Full Slider (5 items)
+      include includes/components/desktop-list-book-slider-full.pug
+      +list-video('Sách nổi bật')
+      br
+      p Desktop List book with Half Slider (4 items)
+      include includes/components/desktop-list-book-slider-half.pug
+      +list-video('Sách nổi bật')
+      p.mt-3 Desktop Audio List 
+      include includes/components/audio-list
+      br
+      p Mobile List book with Half Slider (2 items)
+      include includes/components/mobile-list-book-slide-half.pug
+      +list-video('Sách nổi bật')
+      br
+      p Mobile List book with 1 column
+      include includes/components/mobile-list-book-single-column.pug
+      +list-mobile('Sách nổi bật')
+      br
+      p Mobile List book with 2 column
+      include includes/components/mobile-list-book-multiple-column.pug
+      +list-mobile('Sách nổi bật')
+      br
+  
+  section.section-guide
+    .guide-title Category Filter
+    include includes/components/desktop-category.pug
+    br
+    include includes/components/desktop-category-filter.pug    
+
+  section.section-guide
+    .guide-title Section Home Carousel
+    include includes/components/section-home-banner.pug
+
+  section.section-guide 
+    .guide-title Section Book Detail Infomation
+    include includes/components/section-book-detail-infomation.pug
+
+  section.section-guide 
+    .guide-title Section Author Detail 
+    include includes/components/section-author-detail.pug
+
+  section.section-guide 
+    .guide-title Section Pagination 
+    .guide-section.guide-pagination.d-flex.justify-content-center       
+      include includes/components/pagination.pug
+  section.section-guide 
+    .guide-title Section footer-mobile 
+    .guide-section.guide-footer-mobile       
+      include includes/layout/footer-mobile.pug
+    .guide-section.guide-footer-authen-update 
+      include includes/layout/footer-authen.pug   
+
+
+  section.section-guide 
+    include includes/components/book-detail.pug
+    .guide-title Book detail Styles
+    p Book Detail Vertical
+    +BookDetail({ typeBook: 'book-detail-vertical',title: 'Bàn có năm chỗ ngồi', image: './assets/images/image-sample-book-1.png', type: 'Kishimi Ichiro, Koga Fumitake', isVertical: true })
+
+    p Book Detail Horizontal
+    +BookDetail({ typeBook: 'book-detail-horizontal',title: 'Bàn có năm chỗ ngồi', image: './assets/images/image-sample-book-1.png', type: 'Thể loại: Truyện ngắn', author: 'Tác giả: Nguyễn Nhật Ánh', view: 'Lượt xem: 324,323' })
+
+    p Book Detail Mobile
+    +BookDetail({ typeBook: 'book-detail-mb', title: 'Bàn có năm chỗ ngồi', image: './assets/images/image-sample-book-1.png', type: 'Truyện ngắn', author: 'Nguyễn Nhật Ánh', isMobile: true, isVertical: true })
+
+
+  section.section-guide 
+    .guide-title Section Book Detail Author
+    .guide.guide-section-book-detail-author.mb-3
+      p Desktop Section Book Detail Author
+      include includes/components/desktop-section-book-detail-author.pug
+      +section-book-detail-author({authorName : 'Rosie Nguyễn', chaptersCount : "23", timeLength: "3:23:02", listenersCount: "2232", bookRating: 4.5, bookType: "Kỹ năng - Nghệ thuật sống", bookPublisher :  "NXB Tổng hợp thành phố HCM", timeUpdate: "04/11/2020"})
+    .guide.guide-section-book-detail-author
+      p Mobile Section Book Detail Author
+      include includes/components/mobile-section-book-detail-author.pug
+      +section-book-detail-author-mobile({authorName : 'Rosie Nguyễn', chaptersCount : "23", timeLength: "3:23:02", listenersCount: "2232", bookRating: 4.5, bookType: "Kỹ năng - Nghệ thuật sống", bookPublisher :  "NXB Tổng hợp thành phố HCM", timeUpdate: "04/11/2020"})
+
+  section.section-guide 
+    .guide-title Section Breadcrumb
+    include includes/components/section-breadcrumb.pug
+    +breadcrumb()

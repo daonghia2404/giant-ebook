@@ -1,0 +1,55 @@
+.footer-mobile {
+  .footer__content {
+    .footer-list {
+      .footer-info-descrip {
+        font-size: 12px;
+        line-height: 19px;
+        color: $gray;
+      }
+
+      .footer-contact-item {
+        padding-bottom: 17px;
+
+        img {
+          padding-right: 9px;
+        }
+      }
+
+      .footer-detail {
+        .detail-title {
+          font-family: 'SFProDisplay-Semibold';
+          font-size: 12px;
+          line-height: 19px;
+          color: $primary-dark;
+
+          img {
+            padding-left: 9px;
+          }
+        }
+      }
+    }
+
+    .content-list__item>a {
+      font-size: 12px;
+      line-height: 24px;
+      color: $gray;
+    }
+
+    .footer__content-list {
+      padding: 0;
+
+      .content-list__item {
+        font-size: 12px;
+        line-height: 24px;
+        color: $gray;
+      }
+    }
+
+    .footer-content-title {
+      color: $primary-dark;
+      font-family: 'SFProDisplay-Bold';
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+}

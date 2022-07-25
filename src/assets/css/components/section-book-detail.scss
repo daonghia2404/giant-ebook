@@ -1,0 +1,202 @@
+section.section-book-detail {
+  .book-detail-title {
+    font-size: 28px;
+    color: $primary-dark;
+    margin: 0 0 15px;
+    font-family: 'SFProDisplay-Bold';
+
+    @media (max-width: 575px) {
+      margin-bottom: 0px;
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+
+  .section-wrapper {
+    @media (max-width: 575px) {
+      flex-wrap: wrap;
+    }
+
+    .section-item {
+      @media (max-width: 575px) {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+      }
+
+      .section-book-detail-action {
+        &.section-mobile {
+          max-width: 200px;
+          margin: 0 auto;
+          display: none !important;
+        }
+        @media (max-width: 575px) {
+          &.section-desktop {
+            display: none !important;
+          }
+          &.section-mobile {
+            display: flex !important;
+          }
+        }
+
+        .action-item {
+          flex: 0 0 calc(100% / 3);
+          max-width: calc(100% / 3);
+          padding: 10px;
+          border-radius: 4px;
+          font-size: 12px;
+          color: $gray;
+          text-align: center;
+          transition: 0.3s ease;
+          cursor: pointer;
+          line-height: 1.5;
+
+          .fill {
+            display: none;
+          }
+
+          &.active {
+            .outline {
+              display: none;
+            }
+            .fill {
+              display: block;
+            }
+          }
+
+          &.love:hover,
+          &.love.active {
+            color: $secondary;
+
+            svg path {
+              fill: $secondary;
+            }
+          }
+
+          &.share:hover,
+          &.share.active {
+            color: $primary-dark;
+
+            svg path {
+              fill: $primary-dark;
+            }
+          }
+
+          &.pinterest:hover,
+          &.pinterest.active {
+            color: $red;
+
+            svg path {
+              fill: $red;
+            }
+          }
+
+          svg {
+            height: 20px;
+            display: block;
+            margin: 0 auto 10px;
+
+            path {
+              transition: 0.3s ease;
+            }
+          }
+        }
+      }
+
+      &:first-of-type {
+        flex: 0 0 245px;
+        max-width: 245px;
+        margin-right: 30px;
+
+        .section-book-detail-image {
+          border-radius: 5px;
+          overflow: hidden;
+          margin-bottom: 10px;
+
+          @media (max-width: 575px) {
+            max-width: 165px;
+            margin: 0 auto 10px;
+          }
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+
+      &:last-of-type {
+        flex: 1;
+      }
+
+      .book-detail-info {
+        margin-bottom: 15px;
+
+        p {
+          flex: 0 0 50%;
+          max-width: 50%;
+          font-size: 14px;
+          color: $text-gray-2;
+          margin-bottom: 5px;
+
+          @media (max-width: 575px) {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin: 0;
+          }
+        }
+      }
+
+      .book-detail-rating {
+        margin-bottom: 15px;
+
+        img {
+          width: 25px;
+          margin-right: 5px;
+        }
+      }
+
+      .book-detail-button {
+        margin-bottom: 15px;
+
+        .button-component {
+          margin: 0 10px 10px 0;
+
+          .button-icon {
+            @media (max-width: 575px) {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .book-content {
+        p {
+          font-size: 13px;
+          line-height: 1.5;
+          color: $gray-dark;
+        }
+      }
+
+      .book-detail-menu-lists {
+        .list-item {
+          padding: 5px 0;
+
+          &:not(:last-of-type) {
+            border-bottom: 1px solid $border-light;
+          }
+
+          .item-text {
+            font-size: 14px;
+            color: $gray-dark;
+            line-height: 1.5;
+            margin: 0;
+            font-weight: 400;
+
+            &.bold {
+              font-family: 'SFProDisplay-Bold';
+            }
+          }
+        }
+      }
+    }
+  }
+}

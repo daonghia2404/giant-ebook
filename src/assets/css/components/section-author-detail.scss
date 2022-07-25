@@ -1,0 +1,39 @@
+.section-author {
+  background-color: $white;
+  border-radius: 5px;
+  border: 1px solid $border-light;
+
+  .author-info-detail  {
+    padding: 0 10px;
+    @media (max-width: 575px) {
+      padding: 0;
+    }
+    * {
+      font-family: 'Times New Roman', serif;
+    }
+  }
+
+  &__info {
+    h2 {
+      font-size: 32px;
+      font-style: normal;
+      color: $primary-dark;
+      font-weight: 600;
+    }
+
+    &-type {
+      width: 60px;
+      height: 17px;
+      border-radius: 8px;
+      border: 1px solid $secondary;
+
+      span {
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 13px;
+        color: $secondary;
+      }
+    }
+  }
+}

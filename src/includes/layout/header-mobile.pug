@@ -1,0 +1,54 @@
+include ../components/button.pug
+
+header.header-mobile 
+  .container 
+    .header-wrapper.d-flex.align-items-center.justify-content-between  
+      .header-logo
+        img(src="./assets/images/logo-mobile.svg", alt="")
+      .header-btn-groups.d-flex 
+        div(data-toggle="modal" data-target="#modalLogin")
+          +Button({ icon: 'icon-user-plus-blue.svg', className: 'outline-primary icon' })
+        +Button({ type: 'link', link: '#', icon: 'icon-user-blue.svg', className: 'outline-primary icon js-open-account-sidebar' })
+        +Button({ icon: 'icon-bars-blue.svg', className: 'outline-primary icon js-open-category' })
+
+    .header-search-wrapper
+      form(action="#").header-search.d-flex
+        .search-filter
+          select(style="display: none;")
+            option(value="all") Tất cả các sách
+            option(value="ebook") Ebook
+            option(value="audio-book") Audio book
+            option(value="video-book") Video
+          
+          .dropdown.js-dropdown-option
+            button.dropdown-toggle.button-component.hide-dropdown-icon.d-flex.align-items-center.justify-content-center#headerSearchFilter(data-toggle="dropdown" aria-expanded="false" type="button")
+              <svg class="button-icon" fill="#00559F" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.66667 8H7.33333V6.66667H4.66667V8ZM0 0V1.33333H12V0H0ZM2 4.66667H10V3.33333H2V4.66667Z"/></svg>
+              span.button-title Tất cả các sách
+            ul.dropdown-menu(aria-labelledby="headerSearchFilter").custom-style-dropdown
+              li
+                .dropdown-item(data-selectvalue="all")
+                  .button-component.d-flex.align-items-center.justify-content-center
+                    <svg class="button-icon" fill="#00559F" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.66667 8H7.33333V6.66667H4.66667V8ZM0 0V1.33333H12V0H0ZM2 4.66667H10V3.33333H2V4.66667Z"/></svg>
+                    span.button-title Tất cả các sách
+              li
+                .dropdown-item(data-selectvalue="ebook")
+                  .button-component.d-flex.align-items-center.justify-content-center
+                    <svg class="button-icon" width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.16683H2.66667C2.31304 2.16683 1.97391 2.30731 1.72386 2.55735C1.47381 2.8074 1.33333 3.14654 1.33333 3.50016C1.33333 3.85378 1.47381 4.19292 1.72386 4.44297C1.97391 4.69302 2.31304 4.8335 2.66667 4.8335H12V13.5002C12 13.677 11.9298 13.8465 11.8047 13.9716C11.6797 14.0966 11.5101 14.1668 11.3333 14.1668H2.66667C1.95942 14.1668 1.28115 13.8859 0.781048 13.3858C0.280951 12.8857 0 12.2074 0 11.5002V3.50016C0 2.79292 0.280951 2.11464 0.781048 1.61454C1.28115 1.11445 1.95942 0.833496 2.66667 0.833496H11.3333C11.5101 0.833496 11.6797 0.903734 11.8047 1.02876C11.9298 1.15378 12 1.32335 12 1.50016V2.16683ZM11.3333 4.16683H2.66667C2.48986 4.16683 2.32029 4.09659 2.19526 3.97157C2.07024 3.84654 2 3.67697 2 3.50016C2 3.32335 2.07024 3.15378 2.19526 3.02876C2.32029 2.90373 2.48986 2.8335 2.66667 2.8335H11.3333V4.16683Z" fill="#2E82BC"/></svg>
+                    span.button-title Ebook
+              li
+                .dropdown-item(data-selectvalue="audio-book")
+                  .button-component.d-flex.align-items-center.justify-content-center
+                    <svg class="button-icon" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 0.166504C2.68667 0.166504 0 2.85317 0 6.1665V10.8332C0 11.9365 0.896667 12.8332 2 12.8332H4V7.49984H1.33333V6.1665C1.33333 3.58984 3.42333 1.49984 6 1.49984C8.57667 1.49984 10.6667 3.58984 10.6667 6.1665V7.49984H8V12.8332H10C11.1033 12.8332 12 11.9365 12 10.8332V6.1665C12 2.85317 9.31333 0.166504 6 0.166504Z" fill="#00559F"/></svg>
+                    span.button-title Audio book
+              li
+                .dropdown-item(data-selectvalue="video-book")
+                  .button-component.d-flex.align-items-center.justify-content-center
+                    <svg class="button-icon" width="12" height="17" viewBox="0 0 12 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.5312 3.229L8.9375 0.635254C8.65625 0.354004 8.28125 0.166504 7.875 0.166504H1.5C0.65625 0.166504 0 0.854004 0 1.6665V14.6665C0 15.5103 0.65625 16.1665 1.5 16.1665H10.5C11.3125 16.1665 12 15.5103 12 14.6665V4.2915C12 3.88525 11.8125 3.51025 11.5312 3.229ZM10.375 4.1665H8V1.7915L10.375 4.1665ZM1.5 14.6665V1.6665H6.5V4.9165C6.5 5.354 6.8125 5.6665 7.25 5.6665H10.5V14.6665H1.5ZM8.625 8.07275L7 9.729V8.5415C7 8.19775 6.71875 7.9165 6.375 7.9165H3.125C2.75 7.9165 2.5 8.19775 2.5 8.5415V11.7915C2.5 12.1665 2.75 12.4165 3.125 12.4165H6.375C6.71875 12.4165 7 12.1665 7 11.7915V10.6353L8.625 12.2915C8.9375 12.604 9.5 12.3853 9.5 11.9165V8.44775C9.5 7.979 8.9375 7.76025 8.625 8.07275Z" fill="#2E82BC"/></svg>
+                    span.button-title Video
+          
+        .search-input 
+          input(type="text" placeholder="Nhập tên sách, tác giả bạn muốn tìm kiếm...")
+
+        .search-btn 
+          +Button({ icon: './assets/icons/icon-search-white.svg', className: 'primary icon' })
+      

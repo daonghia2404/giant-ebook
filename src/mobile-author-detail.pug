@@ -1,0 +1,13 @@
+extends includes/layout/layout-mobile.pug
+block pages 
+  - const isCategoryFilter = true
+  - const isHideCategory = true
+  include includes/common/data-list-book.pug
+  include includes/components/mobile-category.pug
+
+  section.section-author-detail-page 
+    .section-wrapper 
+      include includes/components/section-author-detail.pug
+
+      include includes/components/mobile-section-result-search.pug
+      +MobileSectionResultSearch('lists', 'Sách của tác giả Brian Tracy','', true, true)

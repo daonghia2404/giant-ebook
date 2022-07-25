@@ -1,0 +1,85 @@
+-
+  const audioList = [
+    {
+      index : 1,
+      title : 'Phần 1: Tôi Đã Học Như Thế Nào?',
+      icon : './assets/icons/icon-play-orange.svg'
+    },
+    {
+      index : 2,
+      title : 'Phần 1: Tôi Đã Học Như Thế Nào?',
+      icon : './assets/icons/icon-play-orange.svg'
+    },
+    {
+      index : 3,
+      title : 'Phần 2: Tôi Đã Học Như Thế Nào?',
+      icon : './assets/icons/icon-play-orange.svg'
+    },
+    {
+      index : 4,
+      title : 'Phần 3: Tôi Đã Học Như Thế Nào?',
+      icon : './assets/icons/icon-play-orange.svg'
+    },
+    {
+      index : 5,
+      title : 'Phần 4: Tôi Đã Học Như Thế Nào?',
+      icon : './assets/icons/icon-play-orange.svg'
+    },
+    {
+      index : 6,
+      title : 'Phần 5: Tôi Đã Học Như Thế Nào?',
+      icon : './assets/icons/icon-play-orange.svg'
+    },
+    {
+      index : 10,
+      title : 'Mở đầu: Nội dung chương đang chạy ở đây ở đây ở đây ở đây ở đây ở đây ở đây ở ...',
+      icon : './assets/icons/icon-play-orange.svg'
+    },
+    {
+      index : 11,
+      title : 'Mở đầu: Nội dung chương đang chạy ở đây ở đây ở đây ở đây ở đây ở đây ở đây ở ... Mở đầu: Nội dung chương đang chạy ở đây ở đây ở đây ở đây ở đây ở đây ở đây ở ... Mở đầu: Nội dung chương đang chạy ở đây ở đây ở đây ở đây ở đây ở đây ở đây ở ...',
+      icon : './assets/icons/icon-play-orange.svg'
+    },
+    {
+      index : 12,
+      title : 'Phần 1: Tôi Đã Học Như Thế Nào?',
+      icon : './assets/icons/icon-play-orange.svg'
+    },
+    {
+      index : 13,
+      title : 'Phần 2: Tôi Đã Học Như Thế Nào?',
+      icon : './assets/icons/icon-play-orange.svg'
+    },
+    {
+      index : 14,
+      title : 'Phần 3: Tôi Đã Học Như Thế Nào?',
+      icon : './assets/icons/icon-play-orange.svg'
+    },
+    {
+      index : 15,
+      title : 'Phần 4: Tôi Đã Học Như Thế Nào?',
+      icon : './assets/icons/icon-play-orange.svg'
+    },
+    {
+      index : 16,
+      title : 'Phần 5: Tôi Đã Học Như Thế Nào?',
+      icon : './assets/icons/icon-play-orange.svg'
+    },
+    {
+      index : 17,
+      title : 'Mở đầu: Nội dung chương đang chạy ở đây ở đây ở đây ở đây ở đây ở đây ở đây ở ...',
+      icon : './assets/icons/icon-play-orange.svg'
+    },
+  ]
+
+
+ul.audio__list
+  - let i = 0
+  each item, index in audioList
+    li.audio__list-item.d-flex.align-items-center.justify-content-between(class=`${i == 0 ? 'active' : ''}` data-audio-src=`${index % 2 === 0 ? 'https://archive.org/download/brownsatmthermon_1408_librivox/brownsatmthermon_01_pansy_128kb.mp3' : 'https://archive.org/download/flu_2005_librivox/flu_01_mouritz_128kb.mp3'}` data-audio-image="./assets/images/image-sample-book-detail.png" data-audio-title=`${item.title}` data-audio-author=`Nguyễn Văn A ${i + 1}`)
+      .item__img
+        img(src=item.icon, alt="")
+      span.d-inline-block.item__index=item.index 
+      p.mb-0=item.title 
+      span.item__timer=item.timer 
+    - ++i

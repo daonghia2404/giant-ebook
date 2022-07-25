@@ -1,0 +1,22 @@
+//- Using Modal Bootstrap 
+//- Add attr for open this modal (data-toggle="modal" data-target="#modalLogin")
+
+include button.pug
+.modal-login.modal.fade#modalLogin(tabindex="-1" role="dialog" aria-labelledby="modalLogin" aria-hidden="true")
+  .modal-dialog(role="document").modal-dialog-centered
+    .modal-content
+      button.close(data-dismiss="modal" aria-label="Close")
+        img(src="./assets/icons/icon-close-circle-gray.svg", alt="")
+        
+      .modal-body
+        .login-logo 
+          img(src="./assets/images/logo-nxb.svg", alt="")
+        p.mb-1 Đăng nhập với tài khoản NXB Xây dựng của bạn
+        p.bold Giantebook.net
+
+        .line 
+
+        p.small Bạn đã có tài khoản
+        +Button({ type: 'link', link: '#', title: 'Đăng nhập', className: 'secondary big'  })
+
+        p.small Bạn chưa có tài khoản? #[a(href="#") Đăng ký ngay!]

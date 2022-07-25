@@ -1,0 +1,88 @@
+.book-detail-infomation {
+  .title-detail-infomation {
+    font-size: 16px;
+    font-family: 'SFProDisplay-Semibold';
+    color: $primary-dark;
+    display: inline-block;
+    padding: 3px 8px 3px 0;
+    border-bottom: 2px solid $border-gray;
+  }
+
+  @media screen and (max-width: 720px) {
+    .title-detail-infomation {
+      display: block;
+      border-bottom: 1px solid $border-light;
+    }
+  }
+
+  .detail-infomation {
+    overflow: hidden;
+
+    table {
+      margin-top: 15px;
+      width: 100%;
+      tr {
+        th, td {
+          font-size: 13px;
+          color: $gray-dark;
+          padding: 10px;
+        }
+        th {
+          width: 30%;
+        }
+        td {
+          width: 70%;
+        }
+        a {
+          color: $primary-dark;
+        }
+        th {
+          font-family: 'SFProDisplay-Bold';
+        }
+        &:nth-of-type(even) td,
+        &:nth-of-type(even) th {
+          background: $primary-light-transparent;
+        }
+        &:not(:last-of-type) td,
+        &:not(:last-of-type) th {
+          border-bottom: 1px solid $border-light;
+        }
+      }
+    }
+
+    .boder-bottom-custom {
+      border-bottom: 1px solid $border-light;
+    }
+
+    @media (min-width: 768px) {
+      .boder-bottom-custom:nth-child(7) {
+        border-bottom: none;
+      }
+    }
+
+    .item-info {
+      padding: 13px 8px;
+      display: flex;
+      align-items: center;
+
+      img {
+        float: left;
+        margin-right: 6px;
+        width: 12px;
+        height: 11px;
+      }
+
+      p.data {
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 400;
+        color: $gray-dark;
+
+        span {
+          font-family: 'SFProDisplay-Bold';
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+}

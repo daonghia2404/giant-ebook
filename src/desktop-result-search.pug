@@ -1,0 +1,15 @@
+extends includes/layout/layout.pug
+block pages 
+  include includes/common/data-list-book.pug
+  - const isCategoryFilter = true
+
+  section.section-home-page 
+    .container 
+      .section-wrapper 
+        .row 
+          .col-lg-3.pr-0
+            include includes/components/desktop-category.pug
+          .col-lg-9
+            include includes/components/desktop-section-result-search.pug
+            +DesktopSectionResultSearch('search', 'Kết quả tìm kiếm cho từ “ Hai số phận...”: #[span 328] Kết quả ', 'book')
+            
